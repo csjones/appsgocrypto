@@ -1,0 +1,4 @@
+[submodule "_vendors/PSStackedView"]
+	path = _vendors/PSStackedView
+	url = https://github.com/steipete/PSStackedView
+	ignore = dirty
