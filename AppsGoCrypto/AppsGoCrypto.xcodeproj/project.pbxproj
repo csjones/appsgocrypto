@@ -1,0 +1,489 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3F4F5130195790C2007EB2BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F4F512F195790C2007EB2BD /* Foundation.framework */; };
+		3F4F5132195790C2007EB2BD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F4F5131195790C2007EB2BD /* CoreGraphics.framework */; };
+		3F4F5134195790C2007EB2BD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F4F5133195790C2007EB2BD /* UIKit.framework */; };
+		3F4F513A195790C2007EB2BD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3F4F5138195790C2007EB2BD /* InfoPlist.strings */; };
+		3F4F513C195790C2007EB2BD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4F513B195790C2007EB2BD /* main.m */; };
+		3F4F5140195790C2007EB2BD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4F513F195790C2007EB2BD /* AppDelegate.m */; };
+		3F4F5143195790C2007EB2BD /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F4F5141195790C2007EB2BD /* Main_iPhone.storyboard */; };
+		3F4F5146195790C2007EB2BD /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F4F5144195790C2007EB2BD /* Main_iPad.storyboard */; };
+		3F4F5149195790C2007EB2BD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4F5148195790C2007EB2BD /* ViewController.m */; };
+		3F4F514B195790C2007EB2BD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F4F514A195790C2007EB2BD /* Images.xcassets */; };
+		3F4F5152195790C2007EB2BD /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F4F5151195790C2007EB2BD /* XCTest.framework */; };
+		3F4F5153195790C2007EB2BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F4F512F195790C2007EB2BD /* Foundation.framework */; };
+		3F4F5154195790C2007EB2BD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F4F5133195790C2007EB2BD /* UIKit.framework */; };
+		3F4F515C195790C2007EB2BD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3F4F515A195790C2007EB2BD /* InfoPlist.strings */; };
+		3F4F515E195790C2007EB2BD /* AppsGoCryptoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4F515D195790C2007EB2BD /* AppsGoCryptoTests.m */; };
+		3F4F517D195791B1007EB2BD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F4F517C195791B1007EB2BD /* QuartzCore.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3F4F5155195790C2007EB2BD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F4F5124195790C2007EB2BD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3F4F512B195790C2007EB2BD;
+			remoteInfo = AppsGoCrypto;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3F4F512C195790C2007EB2BD /* AppsGoCrypto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppsGoCrypto.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F4F512F195790C2007EB2BD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3F4F5131195790C2007EB2BD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3F4F5133195790C2007EB2BD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3F4F5137195790C2007EB2BD /* AppsGoCrypto-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AppsGoCrypto-Info.plist"; sourceTree = "<group>"; };
+		3F4F5139195790C2007EB2BD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3F4F513B195790C2007EB2BD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3F4F513D195790C2007EB2BD /* AppsGoCrypto-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppsGoCrypto-Prefix.pch"; sourceTree = "<group>"; };
+		3F4F513E195790C2007EB2BD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3F4F513F195790C2007EB2BD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3F4F5142195790C2007EB2BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		3F4F5145195790C2007EB2BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		3F4F5147195790C2007EB2BD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		3F4F5148195790C2007EB2BD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		3F4F514A195790C2007EB2BD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3F4F5150195790C2007EB2BD /* AppsGoCryptoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppsGoCryptoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F4F5151195790C2007EB2BD /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		3F4F5159195790C2007EB2BD /* AppsGoCryptoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AppsGoCryptoTests-Info.plist"; sourceTree = "<group>"; };
+		3F4F515B195790C2007EB2BD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3F4F515D195790C2007EB2BD /* AppsGoCryptoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppsGoCryptoTests.m; sourceTree = "<group>"; };
+		3F4F517C195791B1007EB2BD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3F4F5129195790C2007EB2BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F4F517D195791B1007EB2BD /* QuartzCore.framework in Frameworks */,
+				3F4F5132195790C2007EB2BD /* CoreGraphics.framework in Frameworks */,
+				3F4F5134195790C2007EB2BD /* UIKit.framework in Frameworks */,
+				3F4F5130195790C2007EB2BD /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F4F514D195790C2007EB2BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F4F5152195790C2007EB2BD /* XCTest.framework in Frameworks */,
+				3F4F5154195790C2007EB2BD /* UIKit.framework in Frameworks */,
+				3F4F5153195790C2007EB2BD /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3F4F5123195790C2007EB2BD = {
+			isa = PBXGroup;
+			children = (
+				3F4F5135195790C2007EB2BD /* AppsGoCrypto */,
+				3F4F5157195790C2007EB2BD /* AppsGoCryptoTests */,
+				3F4F512E195790C2007EB2BD /* Frameworks */,
+				3F4F512D195790C2007EB2BD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3F4F512D195790C2007EB2BD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3F4F512C195790C2007EB2BD /* AppsGoCrypto.app */,
+				3F4F5150195790C2007EB2BD /* AppsGoCryptoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3F4F512E195790C2007EB2BD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3F4F517C195791B1007EB2BD /* QuartzCore.framework */,
+				3F4F512F195790C2007EB2BD /* Foundation.framework */,
+				3F4F5131195790C2007EB2BD /* CoreGraphics.framework */,
+				3F4F5133195790C2007EB2BD /* UIKit.framework */,
+				3F4F5151195790C2007EB2BD /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3F4F5135195790C2007EB2BD /* AppsGoCrypto */ = {
+			isa = PBXGroup;
+			children = (
+				3F4F513E195790C2007EB2BD /* AppDelegate.h */,
+				3F4F513F195790C2007EB2BD /* AppDelegate.m */,
+				3F4F5141195790C2007EB2BD /* Main_iPhone.storyboard */,
+				3F4F5144195790C2007EB2BD /* Main_iPad.storyboard */,
+				3F4F5147195790C2007EB2BD /* ViewController.h */,
+				3F4F5148195790C2007EB2BD /* ViewController.m */,
+				3F4F514A195790C2007EB2BD /* Images.xcassets */,
+				3F4F5136195790C2007EB2BD /* Supporting Files */,
+			);
+			path = AppsGoCrypto;
+			sourceTree = "<group>";
+		};
+		3F4F5136195790C2007EB2BD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3F4F5137195790C2007EB2BD /* AppsGoCrypto-Info.plist */,
+				3F4F5138195790C2007EB2BD /* InfoPlist.strings */,
+				3F4F513B195790C2007EB2BD /* main.m */,
+				3F4F513D195790C2007EB2BD /* AppsGoCrypto-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3F4F5157195790C2007EB2BD /* AppsGoCryptoTests */ = {
+			isa = PBXGroup;
+			children = (
+				3F4F515D195790C2007EB2BD /* AppsGoCryptoTests.m */,
+				3F4F5158195790C2007EB2BD /* Supporting Files */,
+			);
+			path = AppsGoCryptoTests;
+			sourceTree = "<group>";
+		};
+		3F4F5158195790C2007EB2BD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3F4F5159195790C2007EB2BD /* AppsGoCryptoTests-Info.plist */,
+				3F4F515A195790C2007EB2BD /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3F4F512B195790C2007EB2BD /* AppsGoCrypto */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F4F5161195790C2007EB2BD /* Build configuration list for PBXNativeTarget "AppsGoCrypto" */;
+			buildPhases = (
+				3F4F5128195790C2007EB2BD /* Sources */,
+				3F4F5129195790C2007EB2BD /* Frameworks */,
+				3F4F512A195790C2007EB2BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AppsGoCrypto;
+			productName = AppsGoCrypto;
+			productReference = 3F4F512C195790C2007EB2BD /* AppsGoCrypto.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3F4F514F195790C2007EB2BD /* AppsGoCryptoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F4F5164195790C2007EB2BD /* Build configuration list for PBXNativeTarget "AppsGoCryptoTests" */;
+			buildPhases = (
+				3F4F514C195790C2007EB2BD /* Sources */,
+				3F4F514D195790C2007EB2BD /* Frameworks */,
+				3F4F514E195790C2007EB2BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3F4F5156195790C2007EB2BD /* PBXTargetDependency */,
+			);
+			name = AppsGoCryptoTests;
+			productName = AppsGoCryptoTests;
+			productReference = 3F4F5150195790C2007EB2BD /* AppsGoCryptoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3F4F5124195790C2007EB2BD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "GigaBitcoin, LLC";
+				TargetAttributes = {
+					3F4F514F195790C2007EB2BD = {
+						TestTargetID = 3F4F512B195790C2007EB2BD;
+					};
+				};
+			};
+			buildConfigurationList = 3F4F5127195790C2007EB2BD /* Build configuration list for PBXProject "AppsGoCrypto" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3F4F5123195790C2007EB2BD;
+			productRefGroup = 3F4F512D195790C2007EB2BD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3F4F512B195790C2007EB2BD /* AppsGoCrypto */,
+				3F4F514F195790C2007EB2BD /* AppsGoCryptoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3F4F512A195790C2007EB2BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F4F5146195790C2007EB2BD /* Main_iPad.storyboard in Resources */,
+				3F4F514B195790C2007EB2BD /* Images.xcassets in Resources */,
+				3F4F5143195790C2007EB2BD /* Main_iPhone.storyboard in Resources */,
+				3F4F513A195790C2007EB2BD /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F4F514E195790C2007EB2BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F4F515C195790C2007EB2BD /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3F4F5128195790C2007EB2BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F4F5149195790C2007EB2BD /* ViewController.m in Sources */,
+				3F4F5140195790C2007EB2BD /* AppDelegate.m in Sources */,
+				3F4F513C195790C2007EB2BD /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F4F514C195790C2007EB2BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F4F515E195790C2007EB2BD /* AppsGoCryptoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3F4F5156195790C2007EB2BD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3F4F512B195790C2007EB2BD /* AppsGoCrypto */;
+			targetProxy = 3F4F5155195790C2007EB2BD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3F4F5138195790C2007EB2BD /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F4F5139195790C2007EB2BD /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		3F4F5141195790C2007EB2BD /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F4F5142195790C2007EB2BD /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		3F4F5144195790C2007EB2BD /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F4F5145195790C2007EB2BD /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		3F4F515A195790C2007EB2BD /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F4F515B195790C2007EB2BD /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3F4F515F195790C2007EB2BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3F4F5160195790C2007EB2BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3F4F5162195790C2007EB2BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AppsGoCrypto/AppsGoCrypto-Prefix.pch";
+				INFOPLIST_FILE = "AppsGoCrypto/AppsGoCrypto-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		3F4F5163195790C2007EB2BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AppsGoCrypto/AppsGoCrypto-Prefix.pch";
+				INFOPLIST_FILE = "AppsGoCrypto/AppsGoCrypto-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		3F4F5165195790C2007EB2BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/AppsGoCrypto.app/AppsGoCrypto";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AppsGoCrypto/AppsGoCrypto-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "AppsGoCryptoTests/AppsGoCryptoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		3F4F5166195790C2007EB2BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/AppsGoCrypto.app/AppsGoCrypto";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AppsGoCrypto/AppsGoCrypto-Prefix.pch";
+				INFOPLIST_FILE = "AppsGoCryptoTests/AppsGoCryptoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3F4F5127195790C2007EB2BD /* Build configuration list for PBXProject "AppsGoCrypto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F4F515F195790C2007EB2BD /* Debug */,
+				3F4F5160195790C2007EB2BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F4F5161195790C2007EB2BD /* Build configuration list for PBXNativeTarget "AppsGoCrypto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F4F5162195790C2007EB2BD /* Debug */,
+				3F4F5163195790C2007EB2BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3F4F5164195790C2007EB2BD /* Build configuration list for PBXNativeTarget "AppsGoCryptoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F4F5165195790C2007EB2BD /* Debug */,
+				3F4F5166195790C2007EB2BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3F4F5124195790C2007EB2BD /* Project object */;
+}
