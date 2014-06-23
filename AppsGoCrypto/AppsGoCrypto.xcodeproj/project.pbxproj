@@ -13,9 +13,6 @@
 		3F4F513A195790C2007EB2BD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3F4F5138195790C2007EB2BD /* InfoPlist.strings */; };
 		3F4F513C195790C2007EB2BD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4F513B195790C2007EB2BD /* main.m */; };
 		3F4F5140195790C2007EB2BD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4F513F195790C2007EB2BD /* AppDelegate.m */; };
-		3F4F5143195790C2007EB2BD /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F4F5141195790C2007EB2BD /* Main_iPhone.storyboard */; };
-		3F4F5146195790C2007EB2BD /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F4F5144195790C2007EB2BD /* Main_iPad.storyboard */; };
-		3F4F5149195790C2007EB2BD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4F5148195790C2007EB2BD /* ViewController.m */; };
 		3F4F514B195790C2007EB2BD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F4F514A195790C2007EB2BD /* Images.xcassets */; };
 		3F4F5152195790C2007EB2BD /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F4F5151195790C2007EB2BD /* XCTest.framework */; };
 		3F4F5153195790C2007EB2BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F4F512F195790C2007EB2BD /* Foundation.framework */; };
@@ -23,6 +20,19 @@
 		3F4F515C195790C2007EB2BD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3F4F515A195790C2007EB2BD /* InfoPlist.strings */; };
 		3F4F515E195790C2007EB2BD /* AppsGoCryptoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4F515D195790C2007EB2BD /* AppsGoCryptoTests.m */; };
 		3F4F517D195791B1007EB2BD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F4F517C195791B1007EB2BD /* QuartzCore.framework */; };
+		3F4F51901957A8AD007EB2BD /* PSStackedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4F51841957A8AD007EB2BD /* PSStackedViewController.m */; };
+		3F4F51911957A8AD007EB2BD /* PSStackedViewGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4F51871957A8AD007EB2BD /* PSStackedViewGlobal.m */; };
+		3F4F51921957A8AD007EB2BD /* PSStackedViewSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4F51891957A8AD007EB2BD /* PSStackedViewSegue.m */; };
+		3F4F51931957A8AD007EB2BD /* PSSVContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4F518B1957A8AD007EB2BD /* PSSVContainerView.m */; };
+		3F4F51941957A8AD007EB2BD /* UIView+PSSizes.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4F518D1957A8AD007EB2BD /* UIView+PSSizes.m */; };
+		3F4F51951957A8AD007EB2BD /* UIViewController+PSStackedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4F518F1957A8AD007EB2BD /* UIViewController+PSStackedView.m */; };
+		3F4F51991957A90A007EB2BD /* StackedContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4F51981957A90A007EB2BD /* StackedContainer.m */; };
+		3F4F519C1957A936007EB2BD /* RootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4F519B1957A936007EB2BD /* RootVC.m */; };
+		3F4F51A01957AB17007EB2BD /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F4F519E1957AB17007EB2BD /* Main_iPad.storyboard */; };
+		3F4F51A11957AB17007EB2BD /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F4F519F1957AB17007EB2BD /* Main_iPhone.storyboard */; };
+		3FBD26A51957B9E7006BD8BE /* DataSource.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3FBD26A41957B9E7006BD8BE /* DataSource.plist */; };
+		3FBD26A91957BC0E006BD8BE /* Root.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FBD26A81957BC0E006BD8BE /* Root.m */; };
+		3FBD26AD1957D432006BD8BE /* NSArray+RootModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FBD26AC1957D432006BD8BE /* NSArray+RootModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,10 +56,6 @@
 		3F4F513D195790C2007EB2BD /* AppsGoCrypto-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppsGoCrypto-Prefix.pch"; sourceTree = "<group>"; };
 		3F4F513E195790C2007EB2BD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3F4F513F195790C2007EB2BD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		3F4F5142195790C2007EB2BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		3F4F5145195790C2007EB2BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		3F4F5147195790C2007EB2BD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		3F4F5148195790C2007EB2BD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		3F4F514A195790C2007EB2BD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3F4F5150195790C2007EB2BD /* AppsGoCryptoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppsGoCryptoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F4F5151195790C2007EB2BD /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -57,6 +63,31 @@
 		3F4F515B195790C2007EB2BD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3F4F515D195790C2007EB2BD /* AppsGoCryptoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppsGoCryptoTests.m; sourceTree = "<group>"; };
 		3F4F517C195791B1007EB2BD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		3F4F51821957A8AD007EB2BD /* PSStackedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSStackedView.h; sourceTree = "<group>"; };
+		3F4F51831957A8AD007EB2BD /* PSStackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSStackedViewController.h; sourceTree = "<group>"; };
+		3F4F51841957A8AD007EB2BD /* PSStackedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSStackedViewController.m; sourceTree = "<group>"; };
+		3F4F51851957A8AD007EB2BD /* PSStackedViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSStackedViewDelegate.h; sourceTree = "<group>"; };
+		3F4F51861957A8AD007EB2BD /* PSStackedViewGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSStackedViewGlobal.h; sourceTree = "<group>"; };
+		3F4F51871957A8AD007EB2BD /* PSStackedViewGlobal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSStackedViewGlobal.m; sourceTree = "<group>"; };
+		3F4F51881957A8AD007EB2BD /* PSStackedViewSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSStackedViewSegue.h; sourceTree = "<group>"; };
+		3F4F51891957A8AD007EB2BD /* PSStackedViewSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSStackedViewSegue.m; sourceTree = "<group>"; };
+		3F4F518A1957A8AD007EB2BD /* PSSVContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSVContainerView.h; sourceTree = "<group>"; };
+		3F4F518B1957A8AD007EB2BD /* PSSVContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSVContainerView.m; sourceTree = "<group>"; };
+		3F4F518C1957A8AD007EB2BD /* UIView+PSSizes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+PSSizes.h"; sourceTree = "<group>"; };
+		3F4F518D1957A8AD007EB2BD /* UIView+PSSizes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+PSSizes.m"; sourceTree = "<group>"; };
+		3F4F518E1957A8AD007EB2BD /* UIViewController+PSStackedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+PSStackedView.h"; sourceTree = "<group>"; };
+		3F4F518F1957A8AD007EB2BD /* UIViewController+PSStackedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+PSStackedView.m"; sourceTree = "<group>"; };
+		3F4F51971957A90A007EB2BD /* StackedContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StackedContainer.h; path = Controllers/StackedContainer.h; sourceTree = "<group>"; };
+		3F4F51981957A90A007EB2BD /* StackedContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StackedContainer.m; path = Controllers/StackedContainer.m; sourceTree = "<group>"; };
+		3F4F519A1957A936007EB2BD /* RootVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RootVC.h; path = Controllers/RootVC.h; sourceTree = "<group>"; };
+		3F4F519B1957A936007EB2BD /* RootVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RootVC.m; path = Controllers/RootVC.m; sourceTree = "<group>"; };
+		3F4F519E1957AB17007EB2BD /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main_iPad.storyboard; path = Storyboards/Main_iPad.storyboard; sourceTree = "<group>"; };
+		3F4F519F1957AB17007EB2BD /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main_iPhone.storyboard; path = Storyboards/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		3FBD26A41957B9E7006BD8BE /* DataSource.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = DataSource.plist; path = Plists/DataSource.plist; sourceTree = "<group>"; };
+		3FBD26A71957BC0E006BD8BE /* Root.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Root.h; path = Models/Root.h; sourceTree = "<group>"; };
+		3FBD26A81957BC0E006BD8BE /* Root.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Root.m; path = Models/Root.m; sourceTree = "<group>"; };
+		3FBD26AB1957D432006BD8BE /* NSArray+RootModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+RootModel.h"; path = "Categories/NSArray+RootModel.h"; sourceTree = "<group>"; };
+		3FBD26AC1957D432006BD8BE /* NSArray+RootModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+RootModel.m"; path = "Categories/NSArray+RootModel.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +118,7 @@
 		3F4F5123195790C2007EB2BD = {
 			isa = PBXGroup;
 			children = (
+				3F4F51811957A8AD007EB2BD /* PSStackedView */,
 				3F4F5135195790C2007EB2BD /* AppsGoCrypto */,
 				3F4F5157195790C2007EB2BD /* AppsGoCryptoTests */,
 				3F4F512E195790C2007EB2BD /* Frameworks */,
@@ -120,11 +152,12 @@
 			children = (
 				3F4F513E195790C2007EB2BD /* AppDelegate.h */,
 				3F4F513F195790C2007EB2BD /* AppDelegate.m */,
-				3F4F5141195790C2007EB2BD /* Main_iPhone.storyboard */,
-				3F4F5144195790C2007EB2BD /* Main_iPad.storyboard */,
-				3F4F5147195790C2007EB2BD /* ViewController.h */,
-				3F4F5148195790C2007EB2BD /* ViewController.m */,
+				3FBD26AA1957D3DB006BD8BE /* Categories */,
+				3F4F51961957A8C5007EB2BD /* Controllers */,
 				3F4F514A195790C2007EB2BD /* Images.xcassets */,
+				3FBD26A61957BBD5006BD8BE /* Models */,
+				3FBD26A31957B995006BD8BE /* Plists */,
+				3F4F519D1957AABB007EB2BD /* Storyboards */,
 				3F4F5136195790C2007EB2BD /* Supporting Files */,
 			);
 			path = AppsGoCrypto;
@@ -157,6 +190,74 @@
 				3F4F515A195790C2007EB2BD /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3F4F51811957A8AD007EB2BD /* PSStackedView */ = {
+			isa = PBXGroup;
+			children = (
+				3F4F51821957A8AD007EB2BD /* PSStackedView.h */,
+				3F4F51831957A8AD007EB2BD /* PSStackedViewController.h */,
+				3F4F51841957A8AD007EB2BD /* PSStackedViewController.m */,
+				3F4F51851957A8AD007EB2BD /* PSStackedViewDelegate.h */,
+				3F4F51861957A8AD007EB2BD /* PSStackedViewGlobal.h */,
+				3F4F51871957A8AD007EB2BD /* PSStackedViewGlobal.m */,
+				3F4F51881957A8AD007EB2BD /* PSStackedViewSegue.h */,
+				3F4F51891957A8AD007EB2BD /* PSStackedViewSegue.m */,
+				3F4F518A1957A8AD007EB2BD /* PSSVContainerView.h */,
+				3F4F518B1957A8AD007EB2BD /* PSSVContainerView.m */,
+				3F4F518C1957A8AD007EB2BD /* UIView+PSSizes.h */,
+				3F4F518D1957A8AD007EB2BD /* UIView+PSSizes.m */,
+				3F4F518E1957A8AD007EB2BD /* UIViewController+PSStackedView.h */,
+				3F4F518F1957A8AD007EB2BD /* UIViewController+PSStackedView.m */,
+			);
+			name = PSStackedView;
+			path = ../_vendors/PSStackedView/PSStackedView;
+			sourceTree = "<group>";
+		};
+		3F4F51961957A8C5007EB2BD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3F4F519A1957A936007EB2BD /* RootVC.h */,
+				3F4F519B1957A936007EB2BD /* RootVC.m */,
+				3F4F51971957A90A007EB2BD /* StackedContainer.h */,
+				3F4F51981957A90A007EB2BD /* StackedContainer.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		3F4F519D1957AABB007EB2BD /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				3F4F519E1957AB17007EB2BD /* Main_iPad.storyboard */,
+				3F4F519F1957AB17007EB2BD /* Main_iPhone.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		3FBD26A31957B995006BD8BE /* Plists */ = {
+			isa = PBXGroup;
+			children = (
+				3FBD26A41957B9E7006BD8BE /* DataSource.plist */,
+			);
+			name = Plists;
+			sourceTree = "<group>";
+		};
+		3FBD26A61957BBD5006BD8BE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3FBD26A71957BC0E006BD8BE /* Root.h */,
+				3FBD26A81957BC0E006BD8BE /* Root.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		3FBD26AA1957D3DB006BD8BE /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				3FBD26AB1957D432006BD8BE /* NSArray+RootModel.h */,
+				3FBD26AC1957D432006BD8BE /* NSArray+RootModel.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,10 +336,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F4F5146195790C2007EB2BD /* Main_iPad.storyboard in Resources */,
+				3F4F51A11957AB17007EB2BD /* Main_iPhone.storyboard in Resources */,
+				3F4F51A01957AB17007EB2BD /* Main_iPad.storyboard in Resources */,
 				3F4F514B195790C2007EB2BD /* Images.xcassets in Resources */,
-				3F4F5143195790C2007EB2BD /* Main_iPhone.storyboard in Resources */,
 				3F4F513A195790C2007EB2BD /* InfoPlist.strings in Resources */,
+				3FBD26A51957B9E7006BD8BE /* DataSource.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,8 +359,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F4F5149195790C2007EB2BD /* ViewController.m in Sources */,
+				3F4F51951957A8AD007EB2BD /* UIViewController+PSStackedView.m in Sources */,
+				3F4F51941957A8AD007EB2BD /* UIView+PSSizes.m in Sources */,
+				3F4F51921957A8AD007EB2BD /* PSStackedViewSegue.m in Sources */,
+				3F4F51901957A8AD007EB2BD /* PSStackedViewController.m in Sources */,
+				3F4F519C1957A936007EB2BD /* RootVC.m in Sources */,
+				3F4F51991957A90A007EB2BD /* StackedContainer.m in Sources */,
 				3F4F5140195790C2007EB2BD /* AppDelegate.m in Sources */,
+				3F4F51911957A8AD007EB2BD /* PSStackedViewGlobal.m in Sources */,
+				3FBD26AD1957D432006BD8BE /* NSArray+RootModel.m in Sources */,
+				3F4F51931957A8AD007EB2BD /* PSSVContainerView.m in Sources */,
+				3FBD26A91957BC0E006BD8BE /* Root.m in Sources */,
 				3F4F513C195790C2007EB2BD /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,22 +399,6 @@
 				3F4F5139195790C2007EB2BD /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		3F4F5141195790C2007EB2BD /* Main_iPhone.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3F4F5142195790C2007EB2BD /* Base */,
-			);
-			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		3F4F5144195790C2007EB2BD /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3F4F5145195790C2007EB2BD /* Base */,
-			);
-			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		3F4F515A195790C2007EB2BD /* InfoPlist.strings */ = {
@@ -474,6 +569,7 @@
 				3F4F5163195790C2007EB2BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3F4F5164195790C2007EB2BD /* Build configuration list for PBXNativeTarget "AppsGoCryptoTests" */ = {
 			isa = XCConfigurationList;
@@ -482,6 +578,7 @@
 				3F4F5166195790C2007EB2BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
