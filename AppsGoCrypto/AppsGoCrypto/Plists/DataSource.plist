@@ -86,5 +86,61 @@
 			</dict>
 		</array>
 	</dict>
+	<dict>
+		<key>color</key>
+		<dict>
+			<key>red</key>
+			<integer>0</integer>
+			<key>green</key>
+			<integer>0</integer>
+			<key>blue</key>
+			<integer>0</integer>
+		</dict>
+		<key>name</key>
+		<string>Vertcoin</string>
+		<key>rows</key>
+		<array>
+			<dict>
+				<key>name</key>
+				<string>Games</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Tickers</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Wallets</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>color</key>
+		<dict>
+			<key>red</key>
+			<integer>0</integer>
+			<key>green</key>
+			<integer>0</integer>
+			<key>blue</key>
+			<integer>0</integer>
+		</dict>
+		<key>name</key>
+		<string>Quarkcoin</string>
+		<key>rows</key>
+		<array>
+			<dict>
+				<key>name</key>
+				<string>Games</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Tickers</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Wallets</string>
+			</dict>
+		</array>
+	</dict>
 </array>
 </plist>
