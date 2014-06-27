@@ -2,3 +2,7 @@
 	path = _vendors/PSStackedView
 	url = https://github.com/steipete/PSStackedView
 	ignore = dirty
+[submodule "_vendors/AFNetworking"]
+	path = _vendors/AFNetworking
+	url = https://github.com/AFNetworking/AFNetworking
+	ignore = dirty
