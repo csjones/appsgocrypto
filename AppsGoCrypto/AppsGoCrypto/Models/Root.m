@@ -7,7 +7,9 @@
 //
 
 #import "Root.h"
+#import "STCategory.h"
 #import "NSArray+RootModel.h"
+#import "UIColor+HexString.h"
 
 @implementation Root
 
@@ -18,11 +20,17 @@
 {
     if ( self = [super init] )
     {
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"DataSource" ofType:@"plist"];
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"AppsGoCrypto" ofType:@"plist"];
         
-        _dataSource = [[NSArray alloc] initWithContentsOfFile:path];
+        _displayedChildren = [[NSMutableArray alloc] init];
+        _structure = [[NSMutableDictionary alloc] init];
+        _categories = [[NSMutableArray alloc] init];
         
-        [self collapseAllHeaders];
+        [self parsePlist:[[NSDictionary alloc] initWithContentsOfFile:path] backIndex:-1];
+        
+        _selectedCategorySection = -1;
+        
+        [_displayedChildren addObjectsFromArray:(( NSDictionary* )_structure[ @"0" ])[ @"forwardIndex" ]];
     }
 
     return self;
@@ -31,57 +39,98 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark    -   Public
 
-- ( void )collapseAllHeaders
+- ( NSInteger )getCategoryIndexFrom:( NSInteger )index
 {
-    NSMutableArray* newHeaders = [[NSMutableArray alloc] init];
-    
-    for( NSUInteger i = 0; i < _dataSource.count; i++ )
-        [newHeaders addObject:@0];
-    
-    _sectionHeaders = [[NSArray alloc] initWithArray:newHeaders];
+    if (_displayedChildren && _displayedChildren.count > 0 && index >=0 && index < _displayedChildren.count)
+    {
+        return [((NSString *)[_displayedChildren objectAtIndex:index]) integerValue];
+    }
+    return 0;
 }
 
-- ( void )toggleSectionHeader:( NSInteger )section
-{    
-    NSMutableArray* newHeaders = [_sectionHeaders mutableCopy];
+- ( STTableViewCell* )setCell:( STTableViewCell* )cell content:( STCategory* )category indexRow:( NSInteger )indexRow
+{
+    [cell setContent:category];
     
-    newHeaders[ section ] = [[NSNumber alloc] initWithBool:![newHeaders[ section ] boolValue]];
+    if (_selectedCategorySection < 0 )
+    {
+        cell.textLabel.textColor = [UIColor whiteColor];
+        [cell.contentView setBackgroundColor:[UIColor colorWithHexString:category.colorHex]];
+    }
+    else
+    {
+        if (indexRow < _selectedCategorySection)
+        {
+            cell.textLabel.textColor = [UIColor grayColor];
+        }
+        else if (indexRow == _selectedCategorySection)
+        {
+            cell.textLabel.textColor = [UIColor whiteColor];
+            [cell.contentView setBackgroundColor:[UIColor colorWithHexString:category.colorHex]];
+        }
+    }
+    return cell;
+}
+
+- ( NSInteger )parsePlist:( NSDictionary* )jsonDict backIndex:( NSInteger )backIndex
+{
+    NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+
+    STCategory *category = [[STCategory alloc]initWithJSON:jsonDict];
+
+    [self.categories addObject:category];
+
+    NSInteger currentIndex = [self.categories indexOfObject:category];
+
+    NSMutableArray *array = [[NSMutableArray alloc] init];
+    NSMutableArray *jsonArray = jsonDict[ @"children" ];
+
+    if (jsonArray && jsonArray.count > 0)
+    {
+        for ( __weak NSDictionary *jsonCategoryDict in jsonArray)
+        {
+          [array addObject: [NSString stringWithFormat:@"%d", [self parsePlist:jsonCategoryDict backIndex:currentIndex]]];
+        }
+    }
+
+    [dict setObject:[NSString stringWithFormat:@"%d", backIndex] forKey:@"backIndex"];
     
-    _sectionHeaders = [[NSArray alloc] initWithArray:newHeaders];
+    if (array && array.count > 0)
+    {
+        [dict setObject:array forKey:@"forwardIndex"];
+    }
+
+    [_structure setObject:dict forKey:[NSString stringWithFormat:@"%d",currentIndex]];
+
+    return currentIndex;
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark    -   UITableViewDataSource
 
-- ( NSInteger )numberOfSectionsInTableView:( UITableView* )tableView
-{
-    return _dataSource.count;
-}
-
 - ( NSInteger )tableView:( UITableView* )tableView numberOfRowsInSection:( NSInteger )section
 {
-    if( ![_sectionHeaders[ section ] boolValue] )
-        return 1;
     
-    return [[_dataSource rowsWithSection:section] count] + 1;
+    return _displayedChildren.count;
 }
 
 - ( UITableViewCell* )tableView:( UITableView* )tableView cellForRowAtIndexPath:( NSIndexPath* )indexPath
 {
-    static UITableViewCell* cell = nil;
+    static NSString *CellIdentifier = @"Cell";
+    STTableViewCell *cell = ( STTableViewCell* )[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    if ( indexPath.row )
+    if (cell == nil)
     {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-        
-        cell.textLabel.text = [_dataSource cellNameWithIndexPath:indexPath];
+        cell = [[STTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    else
-    {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"Header"];
-        
-        cell.textLabel.text = [_dataSource headerNameWithIndexPath:indexPath];
-    }
+    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    NSInteger index = [self getCategoryIndexFrom:indexPath.row];
+    
+    STCategory *category = ((STCategory *)[self.categories objectAtIndex:index]);
+    
+    cell = [self setCell:cell content:category indexRow:indexPath.row];
     
     return cell;
 }
