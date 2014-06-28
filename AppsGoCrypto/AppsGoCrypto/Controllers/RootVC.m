@@ -7,6 +7,7 @@
 //
 
 #import "RootVC.h"
+#import "AppsGoCryptoManager.h"
 
 @implementation RootVC
 
@@ -15,6 +16,15 @@
     if ( self = [super initWithCoder:aDecoder] )
     {
         _tableModel = [[Root alloc] init];
+        
+        AppsGoCryptoManager* agcManager = [[AppsGoCryptoManager alloc] init];
+        
+        [agcManager getAppsGoCryptoListWithSuccess:^(id file) {
+            NSLog(@"file %@", file);
+                                            }
+                                           failure:^(NSError *error) {
+                                               NSLog(@"error %@", error);
+                                           }];
     }
     
     return self;

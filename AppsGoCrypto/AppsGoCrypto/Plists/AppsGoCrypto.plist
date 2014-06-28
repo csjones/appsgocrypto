@@ -200,55 +200,6 @@
 				</dict>
 			</array>
 		</dict>
-		<dict>
-			<key>name</key>
-			<string>Quarkcoin</string>
-			<key>url</key>
-			<string></string>
-			<key>text_color</key>
-			<string>#EB611F</string>
-			<key>border_color</key>
-			<string>#F9D3C1</string>
-			<key>children</key>
-			<array>
-				<dict>
-					<key>name</key>
-					<string>Games</string>
-					<key>url</key>
-					<string></string>
-					<key>text_color</key>
-					<string>#EB611F</string>
-					<key>border_color</key>
-					<string>#F9D3C1</string>
-					<key>children</key>
-					<array/>
-				</dict>
-				<dict>
-					<key>name</key>
-					<string>Tickers</string>
-					<key>url</key>
-					<string></string>
-					<key>text_color</key>
-					<string>#EB611F</string>
-					<key>border_color</key>
-					<string>#F9D3C1</string>
-					<key>children</key>
-					<array/>
-				</dict>
-				<dict>
-					<key>name</key>
-					<string>Wallets</string>
-					<key>url</key>
-					<string></string>
-					<key>text_color</key>
-					<string>#EB611F</string>
-					<key>border_color</key>
-					<string>#F9D3C1</string>
-					<key>children</key>
-					<array/>
-				</dict>
-			</array>
-		</dict>
 	</array>
 	<key>border_color</key>
 	<string>#000000</string>
