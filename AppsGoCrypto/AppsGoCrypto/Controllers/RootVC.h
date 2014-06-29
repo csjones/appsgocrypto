@@ -9,6 +9,9 @@
 #import "Root.h"
 
 @interface RootVC : UIViewController < UITableViewDelegate >
+{
+    __weak RootVC* _weakSelf;
+}
 
 @property ( weak, nonatomic )   IBOutlet    UITableView*    tableView;
 @property ( readonly, nonatomic )           Root*           tableModel;

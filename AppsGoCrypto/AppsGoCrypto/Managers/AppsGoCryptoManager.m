@@ -17,7 +17,7 @@
 {
     if ( self = [super initWithBaseURL:[[NSURL alloc] initWithString:@"http://gigabitcoin.co/"]] )
     {
-        self.responseSerializer = [AFXMLParserResponseSerializer serializer];
+        self.responseSerializer = [AFHTTPResponseSerializer serializer];
         
         self.responseSerializer.acceptableContentTypes = [[NSSet alloc] initWithArray:@[ @"text/xml" ]];
     }

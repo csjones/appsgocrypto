@@ -8,8 +8,10 @@
 
 #import "Root.h"
 #import "STCategory.h"
+#import "XMLDictionary.h"
 #import "NSArray+RootModel.h"
 #import "UIColor+HexString.h"
+#import "AppsGoCryptoManager.h"
 
 @implementation Root
 
@@ -20,13 +22,45 @@
 {
     if ( self = [super init] )
     {
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"AppsGoCrypto" ofType:@"plist"];
+        NSFileManager* fileManager = [[NSFileManager alloc] init];
+        
+        NSArray* paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES );
+        
+        NSString* plistPath = [paths[ 0 ] stringByAppendingPathComponent:@"AppsGoCrypto.plist"];
         
         _displayedChildren = [[NSMutableArray alloc] init];
         _structure = [[NSMutableDictionary alloc] init];
         _categories = [[NSMutableArray alloc] init];
         
-        [self parsePlist:[[NSDictionary alloc] initWithContentsOfFile:path] backIndex:-1];
+        if ( ![fileManager fileExistsAtPath:plistPath] )
+        {
+            NSError* error;
+            
+            NSString* path = [[NSBundle mainBundle] pathForResource:@"AppsGoCrypto" ofType:@"plist"];
+            
+            [fileManager copyItemAtPath:path toPath:plistPath error:&error];
+            
+            NSLog(@"error %@", error);
+        }
+        else
+        {
+            AppsGoCryptoManager* agcManager = [[AppsGoCryptoManager alloc] init];
+            
+            [agcManager getAppsGoCryptoListWithSuccess:^( id file ) {
+                                                   NSArray* paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES );
+                
+                                                   NSString* plistPath = [paths[ 0 ] stringByAppendingPathComponent:@"AppsGoCrypto.plist"];
+                
+                                                   [file writeToFile:plistPath atomically:YES];
+                                               }
+                                               failure:^( NSError* error ) {
+                                                   NSLog(@"error %@", error);
+                                               }];
+        }
+        
+        [self parsePlist:[[NSDictionary alloc] initWithContentsOfFile:plistPath] backIndex:-1];
+        
+        NSLog(@"paths %@", paths);
         
         _selectedCategorySection = -1;
         
