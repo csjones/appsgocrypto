@@ -61,11 +61,11 @@
 
 - (void)tableView:(UITableView *)tableView action:(UITableViewRowAction)action indexPathArray:(NSArray *)indexPathArray animation:(UITableViewRowAnimation)animation
 {
-    if (UITableViewRowInsert == action )
+    if ( UITableViewRowInsert == action )
     {
         [tableView insertRowsAtIndexPaths:indexPathArray withRowAnimation:animation];
     }
-    else if (UITableViewRowDelete == action)
+    else if ( UITableViewRowDelete == action )
     {
         [tableView deleteRowsAtIndexPaths:indexPathArray withRowAnimation:animation];
     }
