@@ -10,6 +10,6 @@
 
 @interface AppsGoCryptoManager : AFHTTPRequestOperationManager
 
-- (void)getAppsGoCryptoListWithSuccess:( void ( ^ )( id file ) )success failure:( void ( ^ )( NSError* error ) )failure;
+- (void)getAppsGoCrypto:( NSString* )info success:( void ( ^ )( id file ) )success failure:( void ( ^ )( NSError* error ) )failure;
 
 @end

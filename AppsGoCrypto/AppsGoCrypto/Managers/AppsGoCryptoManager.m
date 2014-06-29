@@ -28,9 +28,9 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark    -   Public
 
-- (void)getAppsGoCryptoListWithSuccess:( void ( ^ )( id file ) )success failure:( void ( ^ )( NSError* error ) )failure
+- (void)getAppsGoCrypto:( NSString* )info success:( void ( ^ )( id file ) )success failure:( void ( ^ )( NSError* error ) )failure
 {
-    [self GET:@"AppsGoCrypto.plist"
+    [self GET:info
    parameters:nil
       success:^( AFHTTPRequestOperation* operation, id responseObject ) {
           success( responseObject );
