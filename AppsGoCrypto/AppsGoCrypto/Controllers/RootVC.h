@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 GigaBitcoin, LLC. All rights reserved.
 //
 
-#import "Root.h"
+#import "RootModel.h"
 
 @interface RootVC : UIViewController < UITableViewDelegate >
 {
@@ -14,6 +14,6 @@
 }
 
 @property ( weak, nonatomic )   IBOutlet    UITableView*    tableView;
-@property ( readonly, nonatomic )           Root*           tableModel;
+@property ( readonly, nonatomic )           RootModel*      tableModel;
 
 @end

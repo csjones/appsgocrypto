@@ -16,7 +16,7 @@
     {
         _weakSelf = self;
         
-        _tableModel = [[Root alloc] init];
+        _tableModel = [[RootModel alloc] init];
     }
     
     return self;

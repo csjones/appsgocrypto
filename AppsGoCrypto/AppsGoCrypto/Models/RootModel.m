@@ -1,18 +1,18 @@
 //
-//  Root.m
+//  RootModel.m
 //  AppsGoCrypto
 //
 //  Created by Chris on 6/22/14.
 //  Copyright (c) 2014 GigaBitcoin, LLC. All rights reserved.
 //
 
-#import "Root.h"
+#import "RootModel.h"
 #import "STCategory.h"
 #import "NSArray+RootModel.h"
 #import "UIColor+HexString.h"
 #import "AppsGoCryptoManager.h"
 
-@implementation Root
+@implementation RootModel
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark    -   NSObject

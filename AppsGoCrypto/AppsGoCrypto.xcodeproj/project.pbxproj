@@ -31,7 +31,7 @@
 		3F4F51A01957AB17007EB2BD /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F4F519E1957AB17007EB2BD /* Main_iPad.storyboard */; };
 		3F4F51A11957AB17007EB2BD /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F4F519F1957AB17007EB2BD /* Main_iPhone.storyboard */; };
 		3FBD26A51957B9E7006BD8BE /* AppList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3FBD26A41957B9E7006BD8BE /* AppList.plist */; };
-		3FBD26A91957BC0E006BD8BE /* Root.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FBD26A81957BC0E006BD8BE /* Root.m */; };
+		3FBD26A91957BC0E006BD8BE /* RootModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FBD26A81957BC0E006BD8BE /* RootModel.m */; };
 		3FBD26AD1957D432006BD8BE /* NSArray+RootModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FBD26AC1957D432006BD8BE /* NSArray+RootModel.m */; };
 		3FD3051C195A77BB005366CF /* AppCategories.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3FD3051B195A77BB005366CF /* AppCategories.plist */; };
 		3FD30524195A7C4D005366CF /* STCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD3051F195A7C4D005366CF /* STCategory.m */; };
@@ -108,8 +108,8 @@
 		3F4F519E1957AB17007EB2BD /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main_iPad.storyboard; path = Storyboards/Main_iPad.storyboard; sourceTree = "<group>"; };
 		3F4F519F1957AB17007EB2BD /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main_iPhone.storyboard; path = Storyboards/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		3FBD26A41957B9E7006BD8BE /* AppList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AppList.plist; path = Plists/AppList.plist; sourceTree = "<group>"; };
-		3FBD26A71957BC0E006BD8BE /* Root.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Root.h; path = Models/Root.h; sourceTree = "<group>"; };
-		3FBD26A81957BC0E006BD8BE /* Root.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Root.m; path = Models/Root.m; sourceTree = "<group>"; };
+		3FBD26A71957BC0E006BD8BE /* RootModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RootModel.h; path = Models/RootModel.h; sourceTree = "<group>"; };
+		3FBD26A81957BC0E006BD8BE /* RootModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RootModel.m; path = Models/RootModel.m; sourceTree = "<group>"; };
 		3FBD26AB1957D432006BD8BE /* NSArray+RootModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+RootModel.h"; path = "Categories/NSArray+RootModel.h"; sourceTree = "<group>"; };
 		3FBD26AC1957D432006BD8BE /* NSArray+RootModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+RootModel.m"; path = "Categories/NSArray+RootModel.m"; sourceTree = "<group>"; };
 		3FD3051B195A77BB005366CF /* AppCategories.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AppCategories.plist; path = Plists/AppCategories.plist; sourceTree = "<group>"; };
@@ -323,8 +323,8 @@
 		3FBD26A61957BBD5006BD8BE /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				3FBD26A71957BC0E006BD8BE /* Root.h */,
-				3FBD26A81957BC0E006BD8BE /* Root.m */,
+				3FBD26A71957BC0E006BD8BE /* RootModel.h */,
+				3FBD26A81957BC0E006BD8BE /* RootModel.m */,
 				3FD3056919609530005366CF /* ListModel.h */,
 				3FD3056A19609530005366CF /* ListModel.m */,
 			);
@@ -547,7 +547,7 @@
 				3FD3053F195D1A2B005366CF /* AFSecurityPolicy.m in Sources */,
 				3FD3055C195D1A3E005366CF /* UIRefreshControl+AFNetworking.m in Sources */,
 				3FD30558195D1A3E005366CF /* UIAlertView+AFNetworking.m in Sources */,
-				3FBD26A91957BC0E006BD8BE /* Root.m in Sources */,
+				3FBD26A91957BC0E006BD8BE /* RootModel.m in Sources */,
 				3FD3053C195D1A2B005366CF /* AFHTTPRequestOperationManager.m in Sources */,
 				3F4F513C195790C2007EB2BD /* main.m in Sources */,
 				3FD30542195D1A2B005366CF /* AFURLResponseSerialization.m in Sources */,

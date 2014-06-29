@@ -12,11 +12,11 @@
 
 typedef enum
 {
-    UITableViewRowInsert,
-    UITableViewRowDelete
-}UITableViewRowAction;
+    UITableViewRowInsert = 0,
+    UITableViewRowDelete,
+} UITableViewRowAction;
 
-@interface Root : NSObject < UITableViewDataSource >
+@interface RootModel : NSObject < UITableViewDataSource >
 
 @property ( strong, nonatomic )     NSMutableDictionary*    structure;
 @property ( strong, nonatomic )     NSMutableArray*         categories;
