@@ -12,6 +12,6 @@
 
 + ( id )sharedInstance;
 
-- ( void )lookupId:( NSString* )lookupId success:( void ( ^ )( id file ) )success failure:( void ( ^ )( NSError* error ) )failure;
+- ( void )lookupIds:( NSArray* )ids success:( void ( ^ )( id file ) )success failure:( void ( ^ )( NSError* error ) )failure;
 
 @end

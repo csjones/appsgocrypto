@@ -30,6 +30,7 @@
 		3F4F519C1957A936007EB2BD /* RootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4F519B1957A936007EB2BD /* RootVC.m */; };
 		3F4F51A01957AB17007EB2BD /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F4F519E1957AB17007EB2BD /* Main_iPad.storyboard */; };
 		3F4F51A11957AB17007EB2BD /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F4F519F1957AB17007EB2BD /* Main_iPhone.storyboard */; };
+		3F9EB2EA1961192600B33E74 /* JBParallaxCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F9EB2E91961192600B33E74 /* JBParallaxCell.m */; };
 		3FBD26A51957B9E7006BD8BE /* AppList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3FBD26A41957B9E7006BD8BE /* AppList.plist */; };
 		3FBD26A91957BC0E006BD8BE /* RootModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FBD26A81957BC0E006BD8BE /* RootModel.m */; };
 		3FBD26AD1957D432006BD8BE /* NSArray+RootModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FBD26AC1957D432006BD8BE /* NSArray+RootModel.m */; };
@@ -108,6 +109,8 @@
 		3F4F519B1957A936007EB2BD /* RootVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RootVC.m; path = Controllers/RootVC.m; sourceTree = "<group>"; };
 		3F4F519E1957AB17007EB2BD /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main_iPad.storyboard; path = Storyboards/Main_iPad.storyboard; sourceTree = "<group>"; };
 		3F4F519F1957AB17007EB2BD /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main_iPhone.storyboard; path = Storyboards/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		3F9EB2E81961192600B33E74 /* JBParallaxCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JBParallaxCell.h; path = ../_vendors/JBParallaxCell/JBParallaxCell.h; sourceTree = "<group>"; };
+		3F9EB2E91961192600B33E74 /* JBParallaxCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JBParallaxCell.m; path = ../_vendors/JBParallaxCell/JBParallaxCell.m; sourceTree = "<group>"; };
 		3FBD26A41957B9E7006BD8BE /* AppList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AppList.plist; path = Plists/AppList.plist; sourceTree = "<group>"; };
 		3FBD26A71957BC0E006BD8BE /* RootModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RootModel.h; path = Models/RootModel.h; sourceTree = "<group>"; };
 		3FBD26A81957BC0E006BD8BE /* RootModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RootModel.m; path = Models/RootModel.m; sourceTree = "<group>"; };
@@ -196,6 +199,7 @@
 			children = (
 				3FD30527195D1A2B005366CF /* AFNetworking */,
 				3F4F5135195790C2007EB2BD /* AppsGoCrypto */,
+				3F9EB2E7196118F100B33E74 /* JBParallaxCell */,
 				3F4F51811957A8AD007EB2BD /* PSStackedView */,
 				3FD3051D195A7C4D005366CF /* SvppyTable */,
 				3FD30544195D1A3E005366CF /* UIKit+AFNetworking */,
@@ -314,6 +318,15 @@
 				3F4F519F1957AB17007EB2BD /* Main_iPhone.storyboard */,
 			);
 			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		3F9EB2E7196118F100B33E74 /* JBParallaxCell */ = {
+			isa = PBXGroup;
+			children = (
+				3F9EB2E81961192600B33E74 /* JBParallaxCell.h */,
+				3F9EB2E91961192600B33E74 /* JBParallaxCell.m */,
+			);
+			name = JBParallaxCell;
 			sourceTree = "<group>";
 		};
 		3FBD26A31957B995006BD8BE /* Plists */ = {
@@ -551,6 +564,7 @@
 				3FBD26AD1957D432006BD8BE /* NSArray+RootModel.m in Sources */,
 				3F4F51931957A8AD007EB2BD /* PSSVContainerView.m in Sources */,
 				3FD3053F195D1A2B005366CF /* AFSecurityPolicy.m in Sources */,
+				3F9EB2EA1961192600B33E74 /* JBParallaxCell.m in Sources */,
 				3FD3055C195D1A3E005366CF /* UIRefreshControl+AFNetworking.m in Sources */,
 				3FD30558195D1A3E005366CF /* UIAlertView+AFNetworking.m in Sources */,
 				3FBD26A91957BC0E006BD8BE /* RootModel.m in Sources */,

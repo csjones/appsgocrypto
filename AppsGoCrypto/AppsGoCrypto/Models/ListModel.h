@@ -8,6 +8,9 @@
 
 @interface ListModel : NSObject < UITableViewDataSource >
 
-@property ( readonly, nonatomic )   NSArray*    apps;
+@property ( readonly, nonatomic )   NSArray*    media;
+@property ( strong, nonatomic )     NSArray*    mediaInfo;
+
+- (void)getMediaInfoWithCompletion:( void ( ^ )( void ) )completion;
 
 @end

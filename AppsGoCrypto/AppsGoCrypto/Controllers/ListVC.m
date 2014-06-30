@@ -7,6 +7,7 @@
 //
 
 #import "ListVC.h"
+#import "JBParallaxCell.h"
 
 @implementation ListVC
 
@@ -20,6 +21,12 @@
         _weakSelf = self;
         
         _tableModel = [[ListModel alloc] init];
+        
+        [_tableModel getMediaInfoWithCompletion:^{
+            [_weakSelf.tableView reloadData];
+            
+            NSLog(@"_weakSelf.tableModel.mediaInfo %@", _weakSelf.tableModel.mediaInfo);
+        }];
     }
     
     return self;
@@ -33,6 +40,15 @@
     self.tableView.dataSource = _tableModel;
     
     [self.tableView reloadData];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    //  Get visible cells on table view.
+    for ( __weak JBParallaxCell *weakCell in [_weakSelf.tableView visibleCells] )
+    {
+        [weakCell cellOnTableView:_weakSelf.tableView didScrollOnView:_weakSelf.view];
+    }
 }
 
 @end

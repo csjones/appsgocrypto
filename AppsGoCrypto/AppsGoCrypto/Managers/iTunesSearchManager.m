@@ -48,10 +48,10 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark    -   Public
 
-- ( void )lookupId:( NSString* )lookupId success:( void ( ^ )( id file ) )success failure:( void ( ^ )( NSError* error ) )failure
+- ( void )lookupIds:( NSArray* )ids success:( void ( ^ )( id file ) )success failure:( void ( ^ )( NSError* error ) )failure
 {
     [self GET:@"lookup"
-   parameters:@{ @"id" : lookupId }
+   parameters:@{ @"id" : [ids componentsJoinedByString:@","], @"country" : [[NSLocale currentLocale] objectForKey:NSLocaleCountryCode] }
       success:^( AFHTTPRequestOperation* operation, id responseObject ) {
           success( responseObject );
       }

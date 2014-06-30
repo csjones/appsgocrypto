@@ -7,7 +7,10 @@
 //
 
 #import "ListModel.h"
+#import "JBParallaxCell.h"
 #import "AppsGoCryptoManager.h"
+#import "iTunesSearchManager.h"
+#import "UIImageView+AFNetworking.h"
 
 @implementation ListModel
 
@@ -48,12 +51,35 @@
                                 }];
         }
         
-        _apps = [[NSArray alloc] initWithContentsOfFile:plistPath];
-        
-        NSLog(@"apps %@", _apps);
+        _media = [[NSArray alloc] initWithContentsOfFile:plistPath];
     }
     
     return self;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark    -   Public
+
+- (void)getMediaInfoWithCompletion:( void ( ^ )( void ) )completion
+{
+    __weak ListModel* weakSelf = self;
+    
+    __block void (^blockCompletion)(void) = completion;
+    
+    NSMutableArray* ids = [[NSMutableArray alloc] init];
+    
+    for ( NSUInteger i = 0; i < _media.count; i++ )
+        [ids addObject:_media[ i ][ @"id" ]];
+    
+    [[iTunesSearchManager sharedInstance] lookupIds:[[NSArray alloc] initWithArray:ids]
+                                            success:^( id file ) {
+                                                weakSelf.mediaInfo = file[ @"results" ];
+                                                
+                                                blockCompletion();
+                                            }
+                                            failure:^( NSError* error ) {
+                                                NSLog(@"error %@", error);
+                                            }];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -61,30 +87,21 @@
 
 - ( NSInteger )tableView:( UITableView* )tableView numberOfRowsInSection:( NSInteger )section
 {
-//    return _displayedChildren.count;
-    return 0;
+    return _media.count;
 }
 
 - ( UITableViewCell* )tableView:( UITableView* )tableView cellForRowAtIndexPath:( NSIndexPath* )indexPath
 {
-//    static NSString *CellIdentifier = @"Cell";
-//    STTableViewCell *cell = ( STTableViewCell* )[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-//    
-//    if (cell == nil)
-//    {
-//        cell = [[STTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-//    }
-//    
-//    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-//    
-//    NSInteger index = [self getCategoryIndexFrom:indexPath.row];
-//    
-//    STCategory *category = ((STCategory *)[self.categories objectAtIndex:index]);
-//    
-//    cell = [self setCell:cell content:category indexRow:indexPath.row];
-//    
-//    return cell;
-    return nil;
+    static NSString *CellIdentifier = @"parallaxCell";
+    
+    JBParallaxCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    cell.titleLabel.text = _mediaInfo[ indexPath.row ][ @"trackCensoredName" ];
+    cell.subtitleLabel.text = [[NSString alloc] initWithFormat:@"Price %@", _media[ indexPath.row ][ @"formattedPrice" ]];
+    
+    [cell.parallaxImage setImageWithURL:[[NSURL alloc] initWithString:_media[ indexPath.row ][ @"artworkUrl512" ]]];
+
+    return cell;
 }
 
 @end
