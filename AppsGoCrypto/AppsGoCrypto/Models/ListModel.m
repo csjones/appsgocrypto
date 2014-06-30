@@ -85,9 +85,14 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark    -   UITableViewDataSource
 
+- ( NSInteger )numberOfSectionsInTableView:( UITableView* )tableView
+{
+    return 1;
+}
+
 - ( NSInteger )tableView:( UITableView* )tableView numberOfRowsInSection:( NSInteger )section
 {
-    return _media.count;
+    return _mediaInfo.count;
 }
 
 - ( UITableViewCell* )tableView:( UITableView* )tableView cellForRowAtIndexPath:( NSIndexPath* )indexPath
@@ -97,9 +102,10 @@
     JBParallaxCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     cell.titleLabel.text = _mediaInfo[ indexPath.row ][ @"trackCensoredName" ];
-    cell.subtitleLabel.text = [[NSString alloc] initWithFormat:@"Price %@", _media[ indexPath.row ][ @"formattedPrice" ]];
+    cell.subtitleLabel.text = [[NSString alloc] initWithFormat:@"Price %@", _mediaInfo[ indexPath.row ][ @"formattedPrice" ]];
     
-    [cell.parallaxImage setImageWithURL:[[NSURL alloc] initWithString:_media[ indexPath.row ][ @"artworkUrl512" ]]];
+    [cell.parallaxImage setImageWithURL:[[NSURL alloc] initWithString:_mediaInfo[ indexPath.row ][ @"artworkUrl512" ]]
+                       placeholderImage:[UIImage imageNamed:@"placeholder"]];
 
     return cell;
 }

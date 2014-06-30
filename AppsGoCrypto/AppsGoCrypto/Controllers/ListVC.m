@@ -8,6 +8,7 @@
 
 #import "ListVC.h"
 #import "JBParallaxCell.h"
+#import "UIViewController+PSStackedView.h"
 
 @implementation ListVC
 
@@ -21,31 +22,38 @@
         _weakSelf = self;
         
         _tableModel = [[ListModel alloc] init];
-        
-        [_tableModel getMediaInfoWithCompletion:^{
-            [_weakSelf.tableView reloadData];
-            
-            NSLog(@"_weakSelf.tableModel.mediaInfo %@", _weakSelf.tableModel.mediaInfo);
-        }];
     }
     
     return self;
 }
 
-- ( void )viewWillAppear:( BOOL )animated
+- ( void )willMoveToParentViewController:( UIViewController* )parent
 {
-    [super viewWillAppear:animated];
+    [super willMoveToParentViewController:parent];
     
     // Do any additional setup after loading the view.
-    self.tableView.dataSource = _tableModel;
+    _tableView.dataSource = self.tableModel;
     
-    [self.tableView reloadData];
+    [self.tableModel getMediaInfoWithCompletion:^{
+        NSLog(@"getMediaInfoWithCompletion");
+        [_tableView reloadData];
+    }];
 }
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+- ( void )didMoveToParentViewController:( UIViewController* )parent
+{
+    [super didMoveToParentViewController:parent];
+    
+    [self scrollViewDidScroll:nil];
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark    -   UIScrollViewDelegate
+
+- ( void )scrollViewDidScroll:( UIScrollView* )scrollView
 {
     //  Get visible cells on table view.
-    for ( __weak JBParallaxCell *weakCell in [_weakSelf.tableView visibleCells] )
+    for ( __weak JBParallaxCell *weakCell in [_weakSelf.tableView visibleCells])
     {
         [weakCell cellOnTableView:_weakSelf.tableView didScrollOnView:_weakSelf.view];
     }
