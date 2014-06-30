@@ -32,11 +32,10 @@
     [super willMoveToParentViewController:parent];
     
     // Do any additional setup after loading the view.
-    _tableView.dataSource = self.tableModel;
+    self.tableView.dataSource = self.tableModel;
     
     [self.tableModel getMediaInfoWithCompletion:^{
-        NSLog(@"getMediaInfoWithCompletion");
-        [_tableView reloadData];
+        [_weakSelf.tableView reloadData];
     }];
 }
 
@@ -52,10 +51,12 @@
 
 - ( void )scrollViewDidScroll:( UIScrollView* )scrollView
 {
+    __weak UIViewController* weakParent = self.parentViewController;
+    
     //  Get visible cells on table view.
     for ( __weak JBParallaxCell *weakCell in [_weakSelf.tableView visibleCells])
     {
-        [weakCell cellOnTableView:_weakSelf.tableView didScrollOnView:_weakSelf.view];
+        [weakCell cellOnTableView:_weakSelf.tableView didScrollOnView:weakParent.view];
     }
 }
 

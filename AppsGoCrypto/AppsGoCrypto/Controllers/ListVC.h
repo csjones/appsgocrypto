@@ -9,12 +9,12 @@
 
 #import "ListModel.h"
 
-@interface ListVC : UIViewController < UITableViewDelegate, UIScrollViewDelegate >
+@interface ListVC : UITableViewController < UITableViewDelegate, UIScrollViewDelegate >
 {
     __weak ListVC*  _weakSelf;
 }
 
-@property ( weak, nonatomic )   IBOutlet    UITableView*    tableView;
+//@property ( weak, nonatomic )   IBOutlet    UITableView*    tableView;
 @property ( strong, nonatomic )             ListModel*      tableModel;
 
 @end

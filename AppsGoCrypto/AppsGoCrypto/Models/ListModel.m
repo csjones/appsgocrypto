@@ -31,8 +31,6 @@
             NSString* path = [[NSBundle mainBundle] pathForResource:@"AppList" ofType:@"plist"];
             
             [fileManager copyItemAtPath:path toPath:plistPath error:&error];
-            
-            NSLog(@"error %@", error);
         }
         else
         {
