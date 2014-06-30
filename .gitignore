@@ -25,4 +25,4 @@ profile
 *.moved-aside
 DerivedData
 .idea/
-.xcuserstate
+xcuserstate

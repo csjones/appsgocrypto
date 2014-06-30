@@ -57,6 +57,7 @@
 		3FD30561195D1C0C005366CF /* AppsGoCryptoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD30560195D1C0C005366CF /* AppsGoCryptoManager.m */; };
 		3FD3056819607E56005366CF /* iTunesSearchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD3056719607E56005366CF /* iTunesSearchManager.m */; };
 		3FD3056B19609530005366CF /* ListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD3056A19609530005366CF /* ListModel.m */; };
+		3FD305711960A3CF005366CF /* ListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD305701960A3CF005366CF /* ListVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,6 +162,8 @@
 		3FD3056719607E56005366CF /* iTunesSearchManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iTunesSearchManager.m; path = Managers/iTunesSearchManager.m; sourceTree = "<group>"; };
 		3FD3056919609530005366CF /* ListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListModel.h; path = Models/ListModel.h; sourceTree = "<group>"; };
 		3FD3056A19609530005366CF /* ListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListModel.m; path = Models/ListModel.m; sourceTree = "<group>"; };
+		3FD3056F1960A3CF005366CF /* ListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListVC.h; path = Controllers/ListVC.h; sourceTree = "<group>"; };
+		3FD305701960A3CF005366CF /* ListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListVC.m; path = Controllers/ListVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -294,6 +297,8 @@
 		3F4F51961957A8C5007EB2BD /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				3FD3056F1960A3CF005366CF /* ListVC.h */,
+				3FD305701960A3CF005366CF /* ListVC.m */,
 				3F4F519A1957A936007EB2BD /* RootVC.h */,
 				3F4F519B1957A936007EB2BD /* RootVC.m */,
 				3F4F51971957A90A007EB2BD /* StackedContainer.h */,
@@ -323,10 +328,10 @@
 		3FBD26A61957BBD5006BD8BE /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				3FBD26A71957BC0E006BD8BE /* RootModel.h */,
-				3FBD26A81957BC0E006BD8BE /* RootModel.m */,
 				3FD3056919609530005366CF /* ListModel.h */,
 				3FD3056A19609530005366CF /* ListModel.m */,
+				3FBD26A71957BC0E006BD8BE /* RootModel.h */,
+				3FBD26A81957BC0E006BD8BE /* RootModel.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -529,6 +534,7 @@
 				3F4F51941957A8AD007EB2BD /* UIView+PSSizes.m in Sources */,
 				3FD3055A195D1A3E005366CF /* UIImageView+AFNetworking.m in Sources */,
 				3FD3053E195D1A2B005366CF /* AFNetworkReachabilityManager.m in Sources */,
+				3FD305711960A3CF005366CF /* ListVC.m in Sources */,
 				3FD3053B195D1A2B005366CF /* AFHTTPRequestOperation.m in Sources */,
 				3FD30541195D1A2B005366CF /* AFURLRequestSerialization.m in Sources */,
 				3FD30540195D1A2B005366CF /* AFURLConnectionOperation.m in Sources */,
