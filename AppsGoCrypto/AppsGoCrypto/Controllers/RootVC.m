@@ -7,8 +7,13 @@
 //
 
 #import "RootVC.h"
+#import "PSStackedViewController.h"
+#import "UIViewController+PSStackedView.h"
 
 @implementation RootVC
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark    -   UIViewController
 
 - ( id )initWithCoder:( NSCoder* )aDecoder
 {
@@ -30,10 +35,12 @@
     _tableView.dataSource = _tableModel;
     
     [_tableView reloadData];
+    
+    [self.stackController pushViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"List"] animated:YES];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-#pragma mark - UITableViewDelegate
+#pragma mark    -   UITableViewDelegate
 
 - ( void )tableView:( UITableView* )tableView didSelectRowAtIndexPath:( NSIndexPath* )indexPath
 {
@@ -41,9 +48,9 @@
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-//  TODO:   MVVM
+#pragma mark    -   Animation Methods
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-#pragma mark - Animation Methods
+//  TODO:   MVVM
 
 - (NSIndexPath *)getIndexPath:(NSInteger)row
 {

@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 GigaBitcoin, LLC. All rights reserved.
 //
 
-@interface ListModel : NSObject
+@interface ListModel : NSObject < UITableViewDataSource >
+
+@property ( readonly, nonatomic )   NSArray*    apps;
 
 @end
