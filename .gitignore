@@ -20,9 +20,10 @@ build/
 *.xcworkspace
 !default.xcworkspace
 xcuserdata
+xcuserstate
+.xcuserstate
 *.xcuserstate
 profile
 *.moved-aside
 DerivedData
 .idea/
-xcuserstate
