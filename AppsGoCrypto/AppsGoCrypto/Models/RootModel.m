@@ -38,8 +38,6 @@
             NSString* path = [[NSBundle mainBundle] pathForResource:@"AppCategories" ofType:@"plist"];
             
             [fileManager copyItemAtPath:path toPath:plistPath error:&error];
-            
-            NSLog(@"error %@", error);
         }
         else
         {
@@ -121,18 +119,18 @@
     {
         for ( __weak NSDictionary *jsonCategoryDict in jsonArray)
         {
-          [array addObject: [NSString stringWithFormat:@"%d", [self parsePlist:jsonCategoryDict backIndex:currentIndex]]];
+          [array addObject: [[NSString alloc] initWithFormat:@"%ld",[self parsePlist:jsonCategoryDict backIndex:currentIndex]]];
         }
     }
 
-    [dict setObject:[NSString stringWithFormat:@"%d", backIndex] forKey:@"backIndex"];
+    [dict setObject:[[NSString alloc] initWithFormat:@"%ld", backIndex] forKey:@"backIndex"];
     
     if (array && array.count > 0)
     {
         [dict setObject:array forKey:@"forwardIndex"];
     }
 
-    [_structure setObject:dict forKey:[NSString stringWithFormat:@"%d",currentIndex]];
+    [_structure setObject:dict forKey:[[NSString alloc] initWithFormat:@"%ld",currentIndex]];
 
     return currentIndex;
 }
