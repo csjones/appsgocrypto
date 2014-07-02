@@ -21,6 +21,8 @@
     {
         _weakSelf = self;
         
+        _initScrolling = FALSE;
+        
         _tableModel = [[ListModel alloc] init];
     }
     
@@ -43,7 +45,12 @@
 {
     [super didMoveToParentViewController:parent];
     
-    [self scrollViewDidScroll:nil];
+//    if ( !_initScrolling )
+//    {
+//        _initScrolling = TRUE;
+//        
+//        [self scrollViewDidScroll:nil];
+//    }
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -51,13 +58,36 @@
 
 - ( void )scrollViewDidScroll:( UIScrollView* )scrollView
 {
-    __weak UIViewController* weakParent = self.parentViewController;
-    
     //  Get visible cells on table view.
-    for ( __weak JBParallaxCell *weakCell in [_weakSelf.tableView visibleCells])
+    for ( __weak JBParallaxCell *weakCell in [_weakSelf.tableView visibleCells] )
     {
-        [weakCell cellOnTableView:_weakSelf.tableView didScrollOnView:weakParent.view];
+        [weakCell cellOnTableView:_weakSelf.tableView didScrollOnView:_weakSelf.parentViewController.view];
     }
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark    -   UITableViewDelegate
+
+- ( void )tableView:( UITableView* )tableView didSelectRowAtIndexPath:( NSIndexPath* )indexPath
+{
+    SKStoreProductViewController* vc = [[SKStoreProductViewController alloc] init];
+    
+    vc.delegate = self;
+    
+    NSDictionary* dict = [[NSDictionary alloc] initWithObjectsAndKeys:_tableModel.mediaInfo[ indexPath.row ][ @"trackId" ],SKStoreProductParameterITunesItemIdentifier,nil];
+    
+    [vc loadProductWithParameters:dict completionBlock:^(BOOL result, NSError *error) { }];
+    
+    [self presentViewController:vc animated:YES completion:^{ }];
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark    -   SKStoreProductViewControllerDelegate
+
+- ( void )productViewControllerDidFinish:( SKStoreProductViewController* )viewController
+{
+    [viewController dismissViewControllerAnimated:YES
+                                       completion:^{ }];
 }
 
 @end

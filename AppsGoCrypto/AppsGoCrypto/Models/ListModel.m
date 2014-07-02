@@ -100,10 +100,11 @@
     JBParallaxCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     cell.titleLabel.text = _mediaInfo[ indexPath.row ][ @"trackCensoredName" ];
-    cell.subtitleLabel.text = [[NSString alloc] initWithFormat:@"Price %@", _mediaInfo[ indexPath.row ][ @"formattedPrice" ]];
     
     [cell.parallaxImage setImageWithURL:[[NSURL alloc] initWithString:_mediaInfo[ indexPath.row ][ @"artworkUrl512" ]]
                        placeholderImage:[UIImage imageNamed:@"placeholder"]];
+    
+    [cell cellOnTableView:tableView didScrollOnView:tableView.superview];
 
     return cell;
 }

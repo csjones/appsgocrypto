@@ -9,12 +9,15 @@
 
 #import "ListModel.h"
 
-@interface ListVC : UITableViewController < UITableViewDelegate, UIScrollViewDelegate >
+#import <Storekit/StoreKit.h>
+
+@interface ListVC : UITableViewController < UIScrollViewDelegate, UITableViewDelegate, SKStoreProductViewControllerDelegate >
 {
     __weak ListVC*  _weakSelf;
+    
+    BOOL _initScrolling;
 }
 
-//@property ( weak, nonatomic )   IBOutlet    UITableView*    tableView;
 @property ( strong, nonatomic )             ListModel*      tableModel;
 
 @end

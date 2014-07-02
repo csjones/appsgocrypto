@@ -30,6 +30,7 @@
 		3F4F519C1957A936007EB2BD /* RootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4F519B1957A936007EB2BD /* RootVC.m */; };
 		3F4F51A01957AB17007EB2BD /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F4F519E1957AB17007EB2BD /* Main_iPad.storyboard */; };
 		3F4F51A11957AB17007EB2BD /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F4F519F1957AB17007EB2BD /* Main_iPhone.storyboard */; };
+		3F7F79CD196383E900C8A552 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F7F79CC196383E900C8A552 /* StoreKit.framework */; };
 		3F9EB2EA1961192600B33E74 /* JBParallaxCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F9EB2E91961192600B33E74 /* JBParallaxCell.m */; };
 		3F9EDC631961BB320009F994 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F9EDC611961BB320009F994 /* placeholder.png */; };
 		3F9EDC641961BB320009F994 /* placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F9EDC621961BB320009F994 /* placeholder@2x.png */; };
@@ -111,6 +112,7 @@
 		3F4F519B1957A936007EB2BD /* RootVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RootVC.m; path = Controllers/RootVC.m; sourceTree = "<group>"; };
 		3F4F519E1957AB17007EB2BD /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main_iPad.storyboard; path = Storyboards/Main_iPad.storyboard; sourceTree = "<group>"; };
 		3F4F519F1957AB17007EB2BD /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main_iPhone.storyboard; path = Storyboards/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		3F7F79CC196383E900C8A552 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		3F9EB2E81961192600B33E74 /* JBParallaxCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JBParallaxCell.h; path = ../_vendors/JBParallaxCell/JBParallaxCell.h; sourceTree = "<group>"; };
 		3F9EB2E91961192600B33E74 /* JBParallaxCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JBParallaxCell.m; path = ../_vendors/JBParallaxCell/JBParallaxCell.m; sourceTree = "<group>"; };
 		3F9EDC611961BB320009F994 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F7F79CD196383E900C8A552 /* StoreKit.framework in Frameworks */,
 				3F4F517D195791B1007EB2BD /* QuartzCore.framework in Frameworks */,
 				3F4F5132195790C2007EB2BD /* CoreGraphics.framework in Frameworks */,
 				3F4F5134195790C2007EB2BD /* UIKit.framework in Frameworks */,
@@ -225,6 +228,7 @@
 		3F4F512E195790C2007EB2BD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3F7F79CC196383E900C8A552 /* StoreKit.framework */,
 				3F4F517C195791B1007EB2BD /* QuartzCore.framework */,
 				3F4F512F195790C2007EB2BD /* Foundation.framework */,
 				3F4F5131195790C2007EB2BD /* CoreGraphics.framework */,

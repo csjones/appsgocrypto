@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 GigaBitcoin, LLC. All rights reserved.
 //
 
+#import "ListVC.h"
 #import "RootVC.h"
 #import "PSStackedViewController.h"
 #import "UIViewController+PSStackedView.h"
@@ -32,11 +33,14 @@
     [super viewWillAppear:animated];
     
     // Do any additional setup after loading the view.
-    _tableView.dataSource = _tableModel;
-    
-    [_tableView reloadData];
-    
-    [self.stackController pushViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"List"] animated:YES];
+    if ( ![self.stackController.topViewController isKindOfClass:[ListVC class]] )
+    {
+        _tableView.dataSource = _tableModel;
+        
+        [_tableView reloadData];
+        
+        [self.stackController pushViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"List"] animated:YES];
+    }
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
