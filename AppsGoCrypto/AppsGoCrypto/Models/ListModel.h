@@ -11,6 +11,6 @@
 @property ( readonly, nonatomic )   NSArray*    media;
 @property ( strong, nonatomic )     NSArray*    mediaInfo;
 
-- (void)getMediaInfoWithCompletion:( void ( ^ )( void ) )completion;
+- ( void )getMediaInfoWithCompletion:( void ( ^ )( void ) )completion;
 
 @end

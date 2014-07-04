@@ -10,6 +10,12 @@
 #import "JBParallaxCell.h"
 #import "UIViewController+PSStackedView.h"
 
+@interface ListVC ( )
+
+- ( void )updateVisibleCells;
+
+@end
+
 @implementation ListVC
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -36,21 +42,18 @@
     // Do any additional setup after loading the view.
     self.tableView.dataSource = self.tableModel;
     
-    [self.tableModel getMediaInfoWithCompletion:^{
+    [self.tableModel getMediaInfoWithCompletion:^{        
         [_weakSelf.tableView reloadData];
     }];
 }
 
-- ( void )didMoveToParentViewController:( UIViewController* )parent
+///////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark    -   Private
+
+- ( void )updateVisibleCells
 {
-    [super didMoveToParentViewController:parent];
-    
-//    if ( !_initScrolling )
-//    {
-//        _initScrolling = TRUE;
-//        
-//        [self scrollViewDidScroll:nil];
-//    }
+    for ( __weak JBParallaxCell *weakCell in [_weakSelf.tableView visibleCells] )
+        [weakCell cellOnTableView:_weakSelf.tableView didScrollOnView:_weakSelf.tableView.superview];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -58,11 +61,8 @@
 
 - ( void )scrollViewDidScroll:( UIScrollView* )scrollView
 {
-    //  Get visible cells on table view.
-    for ( __weak JBParallaxCell *weakCell in [_weakSelf.tableView visibleCells] )
-    {
-        [weakCell cellOnTableView:_weakSelf.tableView didScrollOnView:_weakSelf.parentViewController.view];
-    }
+    //  Get visible cells on table view.3
+    [self updateVisibleCells];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -87,7 +87,7 @@
 - ( void )productViewControllerDidFinish:( SKStoreProductViewController* )viewController
 {
     [viewController dismissViewControllerAnimated:YES
-                                       completion:^{ }];
+                                       completion:^{ [_weakSelf updateVisibleCells]; }];
 }
 
 @end

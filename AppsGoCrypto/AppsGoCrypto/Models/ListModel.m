@@ -58,7 +58,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark    -   Public
 
-- (void)getMediaInfoWithCompletion:( void ( ^ )( void ) )completion
+- ( void )getMediaInfoWithCompletion:( void ( ^ )( void ) )completion
 {
     __weak ListModel* weakSelf = self;
     
@@ -95,16 +95,27 @@
 
 - ( UITableViewCell* )tableView:( UITableView* )tableView cellForRowAtIndexPath:( NSIndexPath* )indexPath
 {
-    static NSString *CellIdentifier = @"parallaxCell";
+    static NSString* CellIdentifier = @"parallaxCell";
     
-    JBParallaxCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    JBParallaxCell* cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     cell.titleLabel.text = _mediaInfo[ indexPath.row ][ @"trackCensoredName" ];
     
-    [cell.parallaxImage setImageWithURL:[[NSURL alloc] initWithString:_mediaInfo[ indexPath.row ][ @"artworkUrl512" ]]
-                       placeholderImage:[UIImage imageNamed:@"placeholder"]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[[NSURL alloc] initWithString:_mediaInfo[ indexPath.row ][ @"artworkUrl512" ]]];
     
-    [cell cellOnTableView:tableView didScrollOnView:tableView.superview];
+    [request addValue:@"image/*" forHTTPHeaderField:@"Accept"];
+    
+    __weak UITableView* weakTableView = tableView;
+    
+    __weak JBParallaxCell* weakCell = cell;
+    
+    [cell.parallaxImage setImageWithURLRequest:request
+                              placeholderImage:[UIImage imageNamed:@"placeholder"]
+                                       success:^( NSURLRequest* request, NSHTTPURLResponse* response, UIImage* image) {
+                                           [weakCell cellOnTableView:weakTableView didScrollOnView:weakTableView.superview];
+                                           weakCell.parallaxImage.image = image;
+                                       }
+                                       failure:nil];
 
     return cell;
 }
