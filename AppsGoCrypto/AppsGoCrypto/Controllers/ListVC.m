@@ -27,8 +27,6 @@
     {
         _weakSelf = self;
         
-        _initScrolling = FALSE;
-        
         _tableModel = [[ListModel alloc] init];
     }
     
@@ -52,8 +50,13 @@
 
 - ( void )updateVisibleCells
 {
-    for ( __weak JBParallaxCell *weakCell in [_weakSelf.tableView visibleCells] )
-        [weakCell cellOnTableView:_weakSelf.tableView didScrollOnView:_weakSelf.tableView.superview];
+    for ( __weak UITableViewCell *weakCell in [_weakSelf.tableView visibleCells] )
+        if ( [weakCell isKindOfClass:[JBParallaxCell class]] )
+        {
+            __weak JBParallaxCell* parallaxCell = ( JBParallaxCell* )weakCell;
+            
+            [parallaxCell cellOnTableView:_weakSelf.tableView didScrollOnView:_weakSelf.tableView.superview];
+        }
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -67,6 +70,11 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark    -   UITableViewDelegate
+
+- ( CGFloat )tableView:( UITableView* )tableView heightForRowAtIndexPath:( NSIndexPath* )indexPath
+{
+    return indexPath.row ? 58.f : 116.f;
+}
 
 - ( void )tableView:( UITableView* )tableView didSelectRowAtIndexPath:( NSIndexPath* )indexPath
 {

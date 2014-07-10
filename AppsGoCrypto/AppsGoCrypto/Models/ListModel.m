@@ -85,23 +85,32 @@
 
 - ( NSInteger )numberOfSectionsInTableView:( UITableView* )tableView
 {
-    return 1;
+    return _mediaInfo.count;
 }
 
 - ( NSInteger )tableView:( UITableView* )tableView numberOfRowsInSection:( NSInteger )section
 {
-    return _mediaInfo.count;
+    return 2;
 }
 
 - ( UITableViewCell* )tableView:( UITableView* )tableView cellForRowAtIndexPath:( NSIndexPath* )indexPath
 {
+    if ( indexPath.row )
+    {
+        static NSString* CellIdentifier = @"lowerCell";
+        
+        UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        
+        cell.textLabel.text = _mediaInfo[ indexPath.section ][ @"trackCensoredName" ];
+        
+        return  cell;
+    }
+    
     static NSString* CellIdentifier = @"parallaxCell";
     
     JBParallaxCell* cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    cell.titleLabel.text = _mediaInfo[ indexPath.row ][ @"trackCensoredName" ];
-    
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[[NSURL alloc] initWithString:_mediaInfo[ indexPath.row ][ @"artworkUrl512" ]]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[[NSURL alloc] initWithString:_mediaInfo[ indexPath.section ][ @"artworkUrl512" ]]];
     
     [request addValue:@"image/*" forHTTPHeaderField:@"Accept"];
     

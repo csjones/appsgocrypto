@@ -14,8 +14,6 @@
 @interface ListVC : UITableViewController < UIScrollViewDelegate, UITableViewDelegate, SKStoreProductViewControllerDelegate >
 {
     __weak ListVC*  _weakSelf;
-    
-    BOOL _initScrolling;
 }
 
 @property ( strong, nonatomic )             ListModel*      tableModel;
