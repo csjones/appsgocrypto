@@ -12,7 +12,25 @@
 #import "iTunesSearchManager.h"
 #import "UIImageView+AFNetworking.h"
 
+///////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark    -   ListModel Category Interface
+
+@interface ListModel ( )
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark    -   Category Methods
+
+- ( NSString* )filteredAppNameWithString:( NSString* )string;
+
+@end
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark    -   ListModel Class Implementation
+
 @implementation ListModel
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark    -   NSObject
 
 - ( id )init
 {
@@ -56,7 +74,15 @@
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-#pragma mark    -   Public
+#pragma mark    -   Category Methods
+
+- ( NSString* )filteredAppNameWithString:( NSString* )appName
+{
+    return nil;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark    -   Class Methods
 
 - ( void )getMediaInfoWithCompletion:( void ( ^ )( void ) )completion
 {
@@ -85,38 +111,32 @@
 
 - ( NSInteger )numberOfSectionsInTableView:( UITableView* )tableView
 {
-    return _mediaInfo.count;
+    return 1;
 }
 
 - ( NSInteger )tableView:( UITableView* )tableView numberOfRowsInSection:( NSInteger )section
 {
-    return 2;
+    return _mediaInfo.count;
 }
 
 - ( UITableViewCell* )tableView:( UITableView* )tableView cellForRowAtIndexPath:( NSIndexPath* )indexPath
 {
-    if ( indexPath.row )
-    {
-        static NSString* CellIdentifier = @"lowerCell";
-        
-        UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-        
-        cell.textLabel.text = _mediaInfo[ indexPath.section ][ @"trackCensoredName" ];
-        
-        return  cell;
-    }
-    
     static NSString* CellIdentifier = @"parallaxCell";
     
     JBParallaxCell* cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[[NSURL alloc] initWithString:_mediaInfo[ indexPath.section ][ @"artworkUrl512" ]]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[[NSURL alloc] initWithString:_mediaInfo[ indexPath.row ][ @"artworkUrl512" ]]];
     
     [request addValue:@"image/*" forHTTPHeaderField:@"Accept"];
     
     __weak UITableView* weakTableView = tableView;
     
     __weak JBParallaxCell* weakCell = cell;
+    
+    cell.layer.borderWidth = 10;
+    cell.layer.borderColor = [[UIColor whiteColor] CGColor];
+    
+    cell.titleLabel.text = _mediaInfo[ indexPath.row ][ @"trackCensoredName" ];
     
     [cell.parallaxImage setImageWithURLRequest:request
                               placeholderImage:[UIImage imageNamed:@"placeholder"]

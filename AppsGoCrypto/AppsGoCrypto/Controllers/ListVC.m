@@ -71,11 +71,6 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark    -   UITableViewDelegate
 
-- ( CGFloat )tableView:( UITableView* )tableView heightForRowAtIndexPath:( NSIndexPath* )indexPath
-{
-    return indexPath.row ? 58.f : 116.f;
-}
-
 - ( void )tableView:( UITableView* )tableView didSelectRowAtIndexPath:( NSIndexPath* )indexPath
 {
     SKStoreProductViewController* vc = [[SKStoreProductViewController alloc] init];
