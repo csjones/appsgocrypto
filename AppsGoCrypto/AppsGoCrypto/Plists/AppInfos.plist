@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>appId</key>
+		<integer>777634714</integer>
+		<key>appName</key>
+		<string>bitWallet™  —  Bitcoin Wallet</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>889740745</integer>
+		<key>appName</key>
+		<string>GreenAddress</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>763862407</integer>
+		<key>appName</key>
+		<string>Verso Wallet</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>890668158</integer>
+		<key>appName</key>
+		<string>BitStore</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>885640234</integer>
+		<key>appName</key>
+		<string>Coin Pocket - Bitcoin Wallet</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>646583472</integer>
+		<key>appName</key>
+		<string>CoinWatch</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>748662002</integer>
+		<key>appName</key>
+		<string>BubbleCoin - Bitcoin Community</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>734946568</integer>
+		<key>appName</key>
+		<string>BitScan</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>793484994</integer>
+		<key>appName</key>
+		<string>CoinScout - Find Local Places That Accept Bitcoin With Bitcoin Compass And Maps</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>792817672</integer>
+		<key>appName</key>
+		<string>Cryptok</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>818571311</integer>
+		<key>appName</key>
+		<string>Coinality</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>876824447</integer>
+		<key>appName</key>
+		<string>Hoot Solvent</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>819765313</integer>
+		<key>appName</key>
+		<string>Litecoin Rider</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>837153089</integer>
+		<key>appName</key>
+		<string>Bitview</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>859751028</integer>
+		<key>appName</key>
+		<string>Litecoin Convert</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>872746409</integer>
+		<key>appName</key>
+		<string>Money And Tech</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>802910291</integer>
+		<key>appName</key>
+		<string>BIPS POS</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>780733260</integer>
+		<key>appName</key>
+		<string>BTC Miami</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>772163893</integer>
+		<key>appName</key>
+		<string>CoinsMan - Bitcoin &amp; Litecoin Push Monitor</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>873674306</integer>
+		<key>appName</key>
+		<string>Bitcoin Clicker – Free version</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>861242220</integer>
+		<key>appName</key>
+		<string>Doge Clicker Coin Collector Free Game!</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>864187945</integer>
+		<key>appName</key>
+		<string>Bitcoin Foundation Events</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>824501382</integer>
+		<key>appName</key>
+		<string>Texas Bitcoin Conference</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>659218728</integer>
+		<key>appName</key>
+		<string>Bitcoin Wall</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>816744644</integer>
+		<key>appName</key>
+		<string>Bitcoin Escape - A Futuristic Tilt Adventure Racing Game</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>882584646</integer>
+		<key>appName</key>
+		<string>Make The Money Rain : Doge Version The Love Of Crypto-Currency</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>850547912</integer>
+		<key>appName</key>
+		<string>Doge Bounce</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>884511439</integer>
+		<key>appName</key>
+		<string>Make It Rain Doge</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>797021678</integer>
+		<key>appName</key>
+		<string>NastyFans</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>866630697</integer>
+		<key>appName</key>
+		<string>Let's Talk Bitcoin</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>866654884</integer>
+		<key>appName</key>
+		<string>BitTix - Bitcoin Live Price Ticker</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>887183169</integer>
+		<key>appName</key>
+		<string>Coin Miner Stats: BitMinter Bitcoin Tracker</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>628282018</integer>
+		<key>appName</key>
+		<string>Bitcoin Live - The only LIVE Bitcoin app!</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>787299853</integer>
+		<key>appName</key>
+		<string>Coins — Bitcoin Value Tracker</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>783452759</integer>
+		<key>appName</key>
+		<string>Quark Ticker</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>731521731</integer>
+		<key>appName</key>
+		<string>Baseline - Bitcoin Balance Tracker</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>681025353</integer>
+		<key>appName</key>
+		<string>MobileMinerApp</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>446651709</integer>
+		<key>appName</key>
+		<string>Bitcoin Miner Stats</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>463386122</integer>
+		<key>appName</key>
+		<string>BTCmon Bitcoin Monitor</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>785007290</integer>
+		<key>appName</key>
+		<string>Doge Tracker - dogecoin price tracker</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>805178886</integer>
+		<key>appName</key>
+		<string>MYDOGE</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>871630896</integer>
+		<key>appName</key>
+		<string>BitCharge - Easy Merchant Bitcoin Acceptance</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>789603623</integer>
+		<key>appName</key>
+		<string>Space Cash: Bitcoin/Altcoin Ticker + Tracker ~ BTC LTC DRK DOGE +++</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>837876587</integer>
+		<key>appName</key>
+		<string>LTCRabbit</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>787302625</integer>
+		<key>appName</key>
+		<string>LTC Depot</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>782593885</integer>
+		<key>appName</key>
+		<string>Miner Stats</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>757638901</integer>
+		<key>appName</key>
+		<string>LTC Price</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>750432002</integer>
+		<key>appName</key>
+		<string>Coined - Bitcoin and Litecoin Prices</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>627347328</integer>
+		<key>appName</key>
+		<string>BTC Charts</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>699408229</integer>
+		<key>appName</key>
+		<string>Bitcoin Alert</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>865294356</integer>
+		<key>appName</key>
+		<string>CoinDesk - Bitcoin Price &amp; News</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>648411895</integer>
+		<key>appName</key>
+		<string>BTC Miner</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>659172435</integer>
+		<key>appName</key>
+		<string>Bitcoin: Everything About Bitcoins</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>440302110</integer>
+		<key>appName</key>
+		<string>btcReport -  Bitcoin Exchange Tracker and Converter</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>681176788</integer>
+		<key>appName</key>
+		<string>Litecoin Price</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>636476147</integer>
+		<key>appName</key>
+		<string>Coin Ticker - Bitcoin and altcoin ticker and portfolio</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>440229059</integer>
+		<key>appName</key>
+		<string>Bitcoin Ticker</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>457475022</integer>
+		<key>appName</key>
+		<string>Coinbits - Free Bitcoin, Litecoin, Altcoin Real-Time ticker + News tracker for BTC + LTC</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>885251393</integer>
+		<key>appName</key>
+		<string>breadwallet</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<integer>643184018</integer>
+		<key>appName</key>
+		<string>ZeroBlock - Real-Time Bitcoin Ticker and News Feed Tracker</string>
+		<key>placeholderAppIcon</key>
+		<integer>0</integer>
+	</dict>
+</array>
+</plist>

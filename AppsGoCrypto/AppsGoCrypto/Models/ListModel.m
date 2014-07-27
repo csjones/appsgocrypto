@@ -10,7 +10,9 @@
 #import "JBParallaxCell.h"
 #import "AppsGoCryptoManager.h"
 #import "iTunesSearchManager.h"
+#import "AFHTTPRequestOperation.h"
 #import "UIImageView+AFNetworking.h"
+#import "AFURLResponseSerialization.h"
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark    -   ListModel Category Interface
@@ -20,7 +22,13 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark    -   Category Methods
 
-- ( NSString* )filteredAppNameWithString:( NSString* )string;
+- ( void )addAppInfoWith:( NSDictionary* )appInfo;
+
+- ( BOOL )doesAppIconExistForId:( NSNumber* )appId;
+
+- ( void )updateAppInfosWithResults:( NSArray* )results;
+
+- ( void )replaceAppIconWith:( NSData* )iconData forAppId:( NSNumber* )appId;
 
 @end
 
@@ -36,11 +44,13 @@
 {
     if ( self = [super init] )
     {
+        _itunesSearchManager = [iTunesSearchManager sharedInstance];
+        
         NSFileManager* fileManager = [[NSFileManager alloc] init];
         
-        NSArray* paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES );
+        _basePath = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES )[ 0 ];
         
-        NSString* plistPath = [paths[ 0 ] stringByAppendingPathComponent:@"AppList.plist"];
+        NSString* plistPath = [_basePath stringByAppendingPathComponent:@"AppList.plist"];
         
         if ( ![fileManager fileExistsAtPath:plistPath] )
         {
@@ -52,22 +62,22 @@
         }
         else
         {
+            __weak ListModel* weakSelf = self;
+            
             AppsGoCryptoManager* agcManager = [[AppsGoCryptoManager alloc] init];
             
             [agcManager getAppsGoCrypto:@"AppList.plist"
                                 success:^( id file ) {
-                                    NSArray* paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES );
-                                    
-                                    NSString* plistPath = [paths[ 0 ] stringByAppendingPathComponent:@"AppList.plist"];
-                                    
-                                    [file writeToFile:plistPath atomically:YES];
+                                    [file writeToFile:[weakSelf.basePath stringByAppendingPathComponent:@"AppList.plist"] atomically:YES];
                                 }
                                 failure:^( NSError* error ) {
                                     NSLog(@"error %@", error);
                                 }];
         }
         
-        _media = [[NSArray alloc] initWithContentsOfFile:plistPath];
+        _appList = [[NSArray alloc] initWithContentsOfFile:plistPath];
+        
+        _appInfos = [[NSArray alloc] initWithContentsOfFile:[_basePath stringByAppendingPathComponent:@"AppInfos.plist"]];
     }
     
     return self;
@@ -76,15 +86,102 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark    -   Category Methods
 
-- ( NSString* )filteredAppNameWithString:( NSString* )appName
+- ( void )addAppInfoWith:( NSDictionary* )appInfo
 {
-    return nil;
+    for ( __weak NSDictionary* weakAppInfo in _appInfos )
+        if ( [weakAppInfo[ @"appId" ] isEqualToNumber:appInfo[ @"appId" ]] )
+            return;
+    
+    NSMutableArray* newAppInfos = _appInfos.mutableCopy;
+    
+    [newAppInfos addObject:appInfo];
+    
+    _appInfos = [[NSArray alloc] initWithArray:newAppInfos];
+    
+    [_appInfos writeToFile:[_basePath stringByAppendingPathComponent:@"AppInfos.plist"] atomically:YES];
+}
+
+- ( BOOL )doesAppIconExistForId:( NSNumber* )appId
+{
+    for ( __weak NSDictionary* weakAppInfo in _appInfos )
+        if ( [weakAppInfo[ @"appId" ] isEqualToNumber:appId] && ![weakAppInfo[ @"placeholderAppIcon" ] boolValue] )
+            return TRUE;
+    
+    return FALSE;
+}
+
+- ( void )updateAppInfosWithResults:( NSArray* )results
+{
+    __weak ListModel* weakSelf = self;
+    
+    UIImage* placeholderAppIcon = [UIImage imageNamed:@"placeholder"];
+    
+    NSData* dataAppIcon = UIImageJPEGRepresentation( placeholderAppIcon, 1.0 );
+    
+    for ( __weak NSDictionary* weakAppInfo in results )
+    {
+        if ( [weakSelf doesAppIconExistForId:weakAppInfo[ @"trackId" ]] )
+            continue;
+        
+        NSMutableDictionary* newAppInfo = [[NSMutableDictionary alloc] init];
+        
+        [newAppInfo setObject:@1 forKey:@"placeholderAppIcon"];
+        [newAppInfo setObject:weakAppInfo[ @"trackId" ] forKey:@"appId"];
+        [newAppInfo setObject:weakAppInfo[ @"trackCensoredName" ] forKey:@"appName"];
+        
+        [weakSelf addAppInfoWith:[[NSDictionary alloc] initWithDictionary:newAppInfo]];
+        
+        [dataAppIcon writeToFile:[_basePath stringByAppendingPathComponent:[weakAppInfo[ @"trackId" ] stringValue]] atomically:YES];
+        
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[[NSURL alloc] initWithString:weakAppInfo[ @"artworkUrl512" ]]];
+        
+        [request addValue:@"image/*" forHTTPHeaderField:@"Accept"];
+        
+        AFHTTPRequestOperation *requestOperation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+        
+        requestOperation.responseSerializer = [AFImageResponseSerializer serializer];
+        
+        [requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+            [weakSelf replaceAppIconWith:UIImageJPEGRepresentation( responseObject, 1.0 )
+                                forAppId:weakAppInfo[ @"trackId" ]];
+        }
+        failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            NSLog(@"Image error: %@", error);
+        }];
+        
+        [requestOperation start];
+    }
+}
+
+- ( void )replaceAppIconWith:( NSData* )iconData forAppId:( NSNumber* )appId
+{
+    NSMutableArray* newAppInfos = _appInfos.mutableCopy;
+    
+    for ( NSInteger i = 0; i < newAppInfos.count; i++ )
+    {
+        if ( ![newAppInfos[ i ][ @"appId" ] isEqualToNumber:appId] )
+            continue;
+        
+        NSMutableDictionary* updatedAppInfo = [newAppInfos[ i ] mutableCopy];
+        
+        [updatedAppInfo setObject:@0 forKey:@"placeholderAppIcon"];
+        
+        [newAppInfos replaceObjectAtIndex:i withObject:[[NSDictionary alloc] initWithDictionary:updatedAppInfo]];
+        
+        _appInfos = [[NSArray alloc] initWithArray:newAppInfos];
+                
+        [_appInfos writeToFile:[_basePath stringByAppendingPathComponent:@"AppInfos.plist"] atomically:YES];
+        
+        [iconData writeToFile:[_basePath stringByAppendingPathComponent:appId.stringValue] atomically:YES];
+        
+        return;
+    }
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-#pragma mark    -   Class Methods
+#pragma mark    -   Instance Methods
 
-- ( void )getMediaInfoWithCompletion:( void ( ^ )( void ) )completion
+- ( void )getAppInfoWithCompletion:( void ( ^ )( void ) )completion
 {
     __weak ListModel* weakSelf = self;
     
@@ -92,18 +189,34 @@
     
     NSMutableArray* ids = [[NSMutableArray alloc] init];
     
-    for ( NSUInteger i = 0; i < _media.count; i++ )
-        [ids addObject:_media[ i ][ @"id" ]];
+    for ( NSUInteger i = 0; i < _appList.count; i++ )
+        [ids addObject:_appList[ i ][ @"id" ]];
     
-    [[iTunesSearchManager sharedInstance] lookupIds:[[NSArray alloc] initWithArray:ids]
-                                            success:^( id file ) {
-                                                weakSelf.mediaInfo = file[ @"results" ];
+    [_itunesSearchManager lookupIds:[[NSArray alloc] initWithArray:ids]
+                            success:^( NSArray* results ) {
+                                [weakSelf updateAppInfosWithResults:results];
                                                 
-                                                blockCompletion();
-                                            }
-                                            failure:^( NSError* error ) {
-                                                NSLog(@"error %@", error);
-                                            }];
+                                blockCompletion();
+                            }
+                            failure:^( NSError* error ) {
+                                NSLog(@"error %@", error);
+                            }];
+}
+
+- ( void )cell:( UITableViewCell* )cell onTableView:( UITableView* )tableView didScrollOnView:( UIView* )view
+{
+    __weak UIImageView* weakParallaxImageView = ( UIImageView* )[cell viewWithTag:2];
+    
+    CGRect rectInSuperview = [tableView convertRect:cell.frame toView:view];
+    
+    float distanceFromCenter = CGRectGetHeight(view.frame)/2 - CGRectGetMinY(rectInSuperview);
+    float difference = CGRectGetHeight(weakParallaxImageView.frame) - CGRectGetHeight(cell.frame);
+    float move = (distanceFromCenter / CGRectGetHeight(view.frame)) * difference;
+    
+    CGRect imageRect = weakParallaxImageView.frame;
+    imageRect.origin.x = -96;
+    imageRect.origin.y = -(difference/2)+move;
+    weakParallaxImageView.frame = imageRect;
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -116,35 +229,70 @@
 
 - ( NSInteger )tableView:( UITableView* )tableView numberOfRowsInSection:( NSInteger )section
 {
-    return _mediaInfo.count;
+    return _appInfos.count;
 }
 
 - ( UITableViewCell* )tableView:( UITableView* )tableView cellForRowAtIndexPath:( NSIndexPath* )indexPath
 {
-    static NSString* CellIdentifier = @"parallaxCell";
+    static NSString* CellIdentifier = @"merell";
     
-    JBParallaxCell* cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    __weak NSDictionary* weakAppInfo = _appInfos[ indexPath.row ];
     
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[[NSURL alloc] initWithString:_mediaInfo[ indexPath.row ][ @"artworkUrl512" ]]];
+    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    [request addValue:@"image/*" forHTTPHeaderField:@"Accept"];
+    UIImage* appIcon = [[UIImage alloc] initWithContentsOfFile:[_basePath stringByAppendingPathComponent:[weakAppInfo[ @"appId" ] stringValue]]];
     
-    __weak UITableView* weakTableView = tableView;
-    
-    __weak JBParallaxCell* weakCell = cell;
+    if ( !cell )
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        
+        cell.clipsToBounds = YES;
+        
+        UIImageView* parallaxImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 512, 512)];
+        
+        parallaxImageView.tag = 2;
+        parallaxImageView.image = appIcon;
+        
+        [cell addSubview:parallaxImageView];
+        
+        UILabel* titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 182, 300, 64)];
+        
+        titleLabel.tag = 3;
+        titleLabel.numberOfLines = 0;
+        titleLabel.minimumScaleFactor = .25;
+        titleLabel.text = weakAppInfo[ @"appName" ];
+        titleLabel.textColor = [UIColor darkGrayColor];
+        titleLabel.textAlignment = NSTextAlignmentCenter;
+        titleLabel.backgroundColor = [UIColor colorWithRed:234.f/255.f green:234.f/255.f blue:234.f/255.f alpha:1.f];
+        
+        [cell addSubview:titleLabel];
+    }
+    else
+    {
+        __weak UIImageView* weakParallaxImageView = ( UIImageView* )[cell viewWithTag:2];
+        
+        weakParallaxImageView.image = appIcon;
+        
+        __weak UILabel* weakTitleLabel = ( UILabel* )[cell viewWithTag:3];
+        
+        weakTitleLabel.text = weakAppInfo[ @"appName" ];
+    }
     
     cell.layer.borderWidth = 10;
     cell.layer.borderColor = [[UIColor whiteColor] CGColor];
     
-    cell.titleLabel.text = _mediaInfo[ indexPath.row ][ @"trackCensoredName" ];
+//    weakTitleLabel.text = weakAppInfo[ @"appName" ];
     
-    [cell.parallaxImage setImageWithURLRequest:request
-                              placeholderImage:[UIImage imageNamed:@"placeholder"]
-                                       success:^( NSURLRequest* request, NSHTTPURLResponse* response, UIImage* image) {
-                                           [weakCell cellOnTableView:weakTableView didScrollOnView:weakTableView.superview];
-                                           weakCell.parallaxImage.image = image;
-                                       }
-                                       failure:nil];
+    
+    
+//    NSLog(@"weakParallaxImageView.frame %@", NSStringFromCGRect( weakParallaxImageView.frame ) );
+//
+//    [self cell:cell onTableView:tableView didScrollOnView:tableView.superview];
+//
+//    [cell setNeedsLayout];
+//    [cell setNeedsDisplay];
+//
+//    NSLog(@"weakParallaxImageView.frame %@", NSStringFromCGRect( weakParallaxImageView.frame ) );
 
     return cell;
 }

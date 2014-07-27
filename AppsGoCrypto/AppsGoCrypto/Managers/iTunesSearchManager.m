@@ -20,6 +20,8 @@
 {
     if ( self = [super initWithBaseURL:url] )
     {
+        _lastResults = nil;
+        
         self.responseSerializer = [AFJSONResponseSerializer serializer];
         
         self.responseSerializer.acceptableContentTypes = [[NSSet alloc] initWithArray:@[ @"text/javascript" ]];
@@ -51,12 +53,16 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark    -   Public
 
-- ( void )lookupIds:( NSArray* )ids success:( void ( ^ )( id file ) )success failure:( void ( ^ )( NSError* error ) )failure
+- ( void )lookupIds:( NSArray* )ids success:( void ( ^ )( NSArray* results ) )success failure:( void ( ^ )( NSError* error ) )failure
 {
+    __weak iTunesSearchManager* weakSelf = self;
+    
     [self GET:@"lookup"
    parameters:@{ @"id" : [ids componentsJoinedByString:@","], @"country" : [[NSLocale currentLocale] objectForKey:NSLocaleCountryCode] }
       success:^( AFHTTPRequestOperation* operation, id responseObject ) {
-          success( responseObject );
+          weakSelf.lastResults = responseObject[ @"results" ];
+          
+          success( weakSelf.lastResults );
       }
       failure:^( AFHTTPRequestOperation* operation, NSError* error ) {
           failure( error );

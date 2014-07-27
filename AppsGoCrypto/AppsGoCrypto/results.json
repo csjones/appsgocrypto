@@ -1,0 +1,77 @@
+{
+        artistId = 646583475;
+        artistName = "Carlos Solares";
+        artistViewUrl = "https://itunes.apple.com/us/artist/carlos-solares/id646583475?uo=4";
+        artworkUrl100 = "http://a1699.phobos.apple.com/us/r30/Purple/v4/66/f3/57/66f35778-ca95-4aa4-ea3c-62287069a63b/mzl.brboqiit.png";
+        artworkUrl512 = "http://a1699.phobos.apple.com/us/r30/Purple/v4/66/f3/57/66f35778-ca95-4aa4-ea3c-62287069a63b/mzl.brboqiit.png";
+        artworkUrl60 = "http://a554.phobos.apple.com/us/r30/Purple/v4/b9/ed/38/b9ed38ae-7420-757e-e5b6-e1f45c44f51e/icon.png";
+        averageUserRating = 5;
+        bundleId = "com.coinwatchdog.app";
+        contentAdvisoryRating = "4+";
+        currency = USD;
+        description = "A beautiful digital currency asset tracker to follow the following cryptocurrencies:\n-Bitcoin\n-Litecoin\n-Namecoin\n-Terracoin\n-PPCoin\n-Feathercoin\n\nGet market information from Mt.Gox, Btc-e, Vircurex, Bitstamp, & Campbx!\n\nGet all the latest news from sources like:\n-Reddit\n-Google News\n-Gizmodo\n-Bitcoin Forum\n-Litecoin Forum\n\nEstimate your assets with a build in Calculator so you have the latest information about your coins worth.\n\nEasily know the market prices, and trading environment information for each currency.";
+        features =         (
+        );
+        fileSizeBytes = 4530113;
+        formattedPrice = Free;
+        genreIds =         (
+            6002,
+            6015
+        );
+        genres =         (
+            Utilities,
+            Finance
+        );
+        ipadScreenshotUrls =         (
+        );
+        isGameCenterEnabled = 0;
+        kind = software;
+        languageCodesISO2A =         (
+            EN,
+            DE,
+            SE,
+            ES
+        );
+        minimumOsVersion = "5.0";
+        price = 0;
+        primaryGenreId = 6002;
+        primaryGenreName = Utilities;
+        releaseDate = "2013-06-18T19:38:06Z";
+        releaseNotes = "*Pro Features\n- Sort & hide/show coins on the list how you want it\n- Save your assets in the calculator\n- Share news articles via Email, twitter, etc\n\n*Other upgrades\n- More News Sources (like reddit CryptoCurrency & letstalkbitcoin)\n- Improved UI";
+        screenshotUrls =         (
+            "http://a3.mzstatic.com/us/r30/Purple4/v4/31/82/3f/31823f30-95b5-ef3e-454f-7e0192b8ed4f/screen1136x1136.jpeg",
+            "http://a2.mzstatic.com/us/r30/Purple4/v4/fb/63/c6/fb63c6d3-b029-8950-b8bb-8e9870b4d8a2/screen1136x1136.jpeg",
+            "http://a1.mzstatic.com/us/r30/Purple/v4/0a/4c/b0/0a4cb088-34fa-e4be-8374-cb823ac170a3/screen1136x1136.jpeg",
+            "http://a3.mzstatic.com/us/r30/Purple6/v4/d2/ba/a0/d2baa039-471f-80e3-67c5-5c7970fa017e/screen1136x1136.jpeg"
+        );
+        sellerName = "Carlos Solares";
+        supportedDevices =         (
+            "iPhone-3GS",
+            iPhone4,
+            iPodTouchourthGen,
+            iPhone4S,
+            iPodTouchThirdGen,
+            iPadThirdGen4G,
+            iPadThirdGen,
+            iPadFourthGen4G,
+            iPad2Wifi,
+            iPad3G,
+            iPhone5,
+            iPad23G,
+            iPhone5s,
+            iPadFourthGen,
+            iPodTouchFifthGen,
+            iPhone5c,
+            iPadMini4G,
+            iPadMini,
+            iPadWifi
+        );
+        trackCensoredName = CoinWatch;
+        trackContentRating = "4+";
+        trackId = 646583472;
+        trackName = CoinWatch;
+        trackViewUrl = "https://itunes.apple.com/us/app/coinwatch/id646583472?mt=8&uo=4";
+        userRatingCount = 7;
+        version = "3.0";
+        wrapperType = software;
+    }

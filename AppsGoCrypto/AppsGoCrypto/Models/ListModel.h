@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 GigaBitcoin, LLC. All rights reserved.
 //
 
+@class iTunesSearchManager;
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark    -   ListModel Class Interface
 
@@ -14,12 +16,18 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark    -   Properties
 
-@property ( readonly, nonatomic )   NSArray*    media;
-@property ( strong, nonatomic )     NSArray*    mediaInfo;
+@property ( strong, nonatomic )     NSArray*                appList;
+@property ( strong, nonatomic )     NSArray*                appInfos;
+
+@property ( readonly, nonatomic )   NSString*               basePath;
+
+@property ( weak, nonatomic )       iTunesSearchManager*    itunesSearchManager;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-#pragma mark    -   Class Methods
+#pragma mark    -   Instance Methods
 
-- ( void )getMediaInfoWithCompletion:( void ( ^ )( void ) )completion;
+- ( void )getAppInfoWithCompletion:( void ( ^ )( void ) )completion;
+
+- ( void )cell:( UITableViewCell* )cell onTableView:( UITableView* )tableView didScrollOnView:( UIView* )view;
 
 @end

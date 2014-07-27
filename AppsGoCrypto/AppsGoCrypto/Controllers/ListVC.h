@@ -16,6 +16,6 @@
     __weak ListVC*  _weakSelf;
 }
 
-@property ( strong, nonatomic )             ListModel*      tableModel;
+@property ( strong, nonatomic )         ListModel*      tableModel;
 
 @end

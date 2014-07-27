@@ -14,6 +14,11 @@
 @interface iTunesSearchManager : AFHTTPRequestOperationManager
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark    -   Properties
+
+@property ( strong, nonatomic ) NSArray* lastResults;
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark    -   Class Methods
 
 + ( id )sharedInstance;
@@ -21,6 +26,6 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark    -   Instance Methods
 
-- ( void )lookupIds:( NSArray* )ids success:( void ( ^ )( id file ) )success failure:( void ( ^ )( NSError* error ) )failure;
+- ( void )lookupIds:( NSArray* )ids success:( void ( ^ )( NSArray* results ) )success failure:( void ( ^ )( NSError* error ) )failure;
 
 @end

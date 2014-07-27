@@ -33,16 +33,23 @@
     return self;
 }
 
+- ( void )didMoveToParentViewController:( UIViewController* )parent
+{
+    [super didMoveToParentViewController:parent];
+    
+    self.tableView.dataSource = self.tableModel;
+
+    [self.tableView reloadData];
+}
+
 - ( void )willMoveToParentViewController:( UIViewController* )parent
 {
     [super willMoveToParentViewController:parent];
     
     // Do any additional setup after loading the view.
-    self.tableView.dataSource = self.tableModel;
-    
-    [self.tableModel getMediaInfoWithCompletion:^{        
-        [_weakSelf.tableView reloadData];
-    }];
+//    [self.tableModel getAppInfoWithCompletion:^{
+//        [_weakSelf.tableView reloadData];
+//    }];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -51,11 +58,15 @@
 - ( void )updateVisibleCells
 {
     for ( __weak UITableViewCell *weakCell in [_weakSelf.tableView visibleCells] )
-        if ( [weakCell isKindOfClass:[JBParallaxCell class]] )
+//        if ( [weakCell isKindOfClass:[JBParallaxCell class]] )
         {
-            __weak JBParallaxCell* parallaxCell = ( JBParallaxCell* )weakCell;
+            __weak UIImageView* weakParallaxImageView = ( UIImageView* )[weakCell viewWithTag:2];
             
-            [parallaxCell cellOnTableView:_weakSelf.tableView didScrollOnView:_weakSelf.tableView.superview];
+//            NSLog(@"weakParallaxImageView.frame %@", NSStringFromCGRect( weakParallaxImageView.frame ) );
+            
+            [_tableModel cell:weakCell onTableView:self.tableView didScrollOnView:self.tableView.superview];
+            
+//            NSLog(@"weakParallaxImageView.frame %@", NSStringFromCGRect( weakParallaxImageView.frame ) );
         }
 }
 
@@ -71,13 +82,26 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark    -   UITableViewDelegate
 
+- ( void )tableView:( UITableView* )tableView willDisplayCell:( UITableViewCell* )cell forRowAtIndexPath:( NSIndexPath* )indexPath
+{
+//    __weak UIImageView* weakParallaxImageView = ( UIImageView* )[cell viewWithTag:2];
+    
+//    NSLog(@"weakParallaxImageView.frame %@", NSStringFromCGRect( weakParallaxImageView.frame ) );
+    
+    [_tableModel cell:cell onTableView:tableView didScrollOnView:tableView.superview];
+    
+//    [cell setNeedsLayout];
+    
+//    NSLog(@"weakParallaxImageView.frame %@", NSStringFromCGRect( weakParallaxImageView.frame ) );
+}
+
 - ( void )tableView:( UITableView* )tableView didSelectRowAtIndexPath:( NSIndexPath* )indexPath
 {
     SKStoreProductViewController* vc = [[SKStoreProductViewController alloc] init];
     
     vc.delegate = self;
     
-    NSDictionary* dict = [[NSDictionary alloc] initWithObjectsAndKeys:_tableModel.mediaInfo[ indexPath.row ][ @"trackId" ],SKStoreProductParameterITunesItemIdentifier,nil];
+    NSDictionary* dict = [[NSDictionary alloc] initWithObjectsAndKeys:_tableModel.appInfos[ indexPath.row ][ @"appId" ],SKStoreProductParameterITunesItemIdentifier,nil];
     
     [vc loadProductWithParameters:dict completionBlock:^(BOOL result, NSError *error) { }];
     
