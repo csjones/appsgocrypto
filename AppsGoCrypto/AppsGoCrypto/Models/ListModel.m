@@ -7,7 +7,6 @@
 //
 
 #import "ListModel.h"
-#import "JBParallaxCell.h"
 #import "AppsGoCryptoManager.h"
 #import "iTunesSearchManager.h"
 #import "AFHTTPRequestOperation.h"
@@ -247,6 +246,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         
         cell.clipsToBounds = YES;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
         UIImageView* parallaxImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 512, 512)];
         
@@ -281,19 +281,6 @@
     cell.layer.borderWidth = 10;
     cell.layer.borderColor = [[UIColor whiteColor] CGColor];
     
-//    weakTitleLabel.text = weakAppInfo[ @"appName" ];
-    
-    
-    
-//    NSLog(@"weakParallaxImageView.frame %@", NSStringFromCGRect( weakParallaxImageView.frame ) );
-//
-//    [self cell:cell onTableView:tableView didScrollOnView:tableView.superview];
-//
-//    [cell setNeedsLayout];
-//    [cell setNeedsDisplay];
-//
-//    NSLog(@"weakParallaxImageView.frame %@", NSStringFromCGRect( weakParallaxImageView.frame ) );
-
     return cell;
 }
 

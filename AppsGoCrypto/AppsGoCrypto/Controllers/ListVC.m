@@ -7,7 +7,6 @@
 //
 
 #import "ListVC.h"
-#import "JBParallaxCell.h"
 #import "UIViewController+PSStackedView.h"
 
 @interface ListVC ( )
@@ -58,16 +57,7 @@
 - ( void )updateVisibleCells
 {
     for ( __weak UITableViewCell *weakCell in [_weakSelf.tableView visibleCells] )
-//        if ( [weakCell isKindOfClass:[JBParallaxCell class]] )
-        {
-            __weak UIImageView* weakParallaxImageView = ( UIImageView* )[weakCell viewWithTag:2];
-            
-//            NSLog(@"weakParallaxImageView.frame %@", NSStringFromCGRect( weakParallaxImageView.frame ) );
-            
-            [_tableModel cell:weakCell onTableView:self.tableView didScrollOnView:self.tableView.superview];
-            
-//            NSLog(@"weakParallaxImageView.frame %@", NSStringFromCGRect( weakParallaxImageView.frame ) );
-        }
+        [_tableModel cell:weakCell onTableView:self.tableView didScrollOnView:self.tableView.superview];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -84,15 +74,7 @@
 
 - ( void )tableView:( UITableView* )tableView willDisplayCell:( UITableViewCell* )cell forRowAtIndexPath:( NSIndexPath* )indexPath
 {
-//    __weak UIImageView* weakParallaxImageView = ( UIImageView* )[cell viewWithTag:2];
-    
-//    NSLog(@"weakParallaxImageView.frame %@", NSStringFromCGRect( weakParallaxImageView.frame ) );
-    
     [_tableModel cell:cell onTableView:tableView didScrollOnView:tableView.superview];
-    
-//    [cell setNeedsLayout];
-    
-//    NSLog(@"weakParallaxImageView.frame %@", NSStringFromCGRect( weakParallaxImageView.frame ) );
 }
 
 - ( void )tableView:( UITableView* )tableView didSelectRowAtIndexPath:( NSIndexPath* )indexPath
