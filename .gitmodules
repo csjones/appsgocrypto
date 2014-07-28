@@ -6,7 +6,3 @@
 	path = _vendors/AFNetworking
 	url = https://github.com/AFNetworking/AFNetworking
 	ignore = dirty
-[submodule "_vendors/JBParallaxCell"]
-	path = _vendors/JBParallaxCell
-	url = https://github.com/jberlana/JBParallaxCell
-	ignore = dirty
