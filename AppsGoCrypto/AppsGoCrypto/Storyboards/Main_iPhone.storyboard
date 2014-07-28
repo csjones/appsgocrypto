@@ -45,6 +45,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="HQ7-8j-1Yu" id="3ho-QN-B55"/>
                     </connections>
@@ -67,6 +68,7 @@
                             <outlet property="delegate" destination="LpI-u3-tPs" id="Dwh-ag-Am1"/>
                         </connections>
                     </tableView>
+                    <nil key="simulatedStatusBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mAh-VF-MJl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

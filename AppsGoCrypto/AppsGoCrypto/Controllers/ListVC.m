@@ -35,15 +35,13 @@
 - ( void )didMoveToParentViewController:( UIViewController* )parent
 {
     [super didMoveToParentViewController:parent];
-    
-    self.tableView.dataSource = self.tableModel;
-
-    [self.tableView reloadData];
 }
 
 - ( void )willMoveToParentViewController:( UIViewController* )parent
 {
     [super willMoveToParentViewController:parent];
+    
+    self.tableView.dataSource = self.tableModel;
     
     // Do any additional setup after loading the view.
 //    [self.tableModel getAppInfoWithCompletion:^{
