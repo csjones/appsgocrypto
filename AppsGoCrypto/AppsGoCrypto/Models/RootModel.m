@@ -99,6 +99,9 @@
             [cell.contentView setBackgroundColor:[UIColor colorWithHexString:category.colorHex]];
         }
     }
+    
+    cell.textLabel.textAlignment = NSTextAlignmentLeft;
+    
     return cell;
 }
 
@@ -161,7 +164,7 @@
     STCategory *category = ((STCategory *)[self.categories objectAtIndex:index]);
     
     cell = [self setCell:cell content:category indexRow:indexPath.row];
-    
+        
     return cell;
 }
 
