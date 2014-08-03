@@ -21,6 +21,8 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark    -   Category Methods
 
+- ( NSArray* )tagsForId:( NSNumber* )appId;
+
 - ( void )addAppInfoWith:( NSDictionary* )appInfo;
 
 - ( BOOL )doesAppIconExistForId:( NSNumber* )appId;
@@ -74,6 +76,8 @@
                                 }];
         }
         
+        _filteredAppInfos = [[NSMutableDictionary alloc] init];
+        
         _appList = [[NSArray alloc] initWithContentsOfFile:plistPath];
         
         _appInfos = [[NSArray alloc] initWithContentsOfFile:[_basePath stringByAppendingPathComponent:@"AppInfos.plist"]];
@@ -84,6 +88,15 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark    -   Category Methods
+
+- ( NSArray* )tagsForId:( NSNumber* )appId
+{
+    for ( __weak NSDictionary* weakAppInfo in _appList)
+        if ( [weakAppInfo[ @"id" ] isEqualToString:appId.stringValue] )
+            return weakAppInfo[ @"tags" ];
+    
+    return nil;
+}
 
 - ( void )addAppInfoWith:( NSDictionary* )appInfo
 {
@@ -127,6 +140,7 @@
         [newAppInfo setObject:@1 forKey:@"placeholderAppIcon"];
         [newAppInfo setObject:weakAppInfo[ @"trackId" ] forKey:@"appId"];
         [newAppInfo setObject:weakAppInfo[ @"trackCensoredName" ] forKey:@"appName"];
+        [newAppInfo setObject:[self tagsForId:weakAppInfo[ @"trackId" ]] forKey:@"tags"];
         
         [weakSelf addAppInfoWith:[[NSDictionary alloc] initWithDictionary:newAppInfo]];
         
@@ -202,6 +216,45 @@
                             }];
 }
 
+- ( void )appInfosWithTag:( NSString* )tag completion:( void ( ^ )( void ) )completion
+{
+    _tag = tag;
+    
+    if ( [tag isEqualToString:@"All Coins"] )
+    {
+        [_filteredAppInfos removeAllObjects];
+        
+        _tag = nil;
+        
+        completion();
+        
+        return;
+    }
+    
+    if ( _filteredAppInfos[ tag ] )
+    {
+        NSArray* updatedAppInfos = [_filteredAppInfos[ tag ] copy];
+        
+        [_filteredAppInfos removeAllObjects];
+        
+        [_filteredAppInfos setObject:updatedAppInfos forKey:tag];
+        
+        completion();
+        
+        return;
+    }
+    
+    NSArray* appInfosToFilter = _filteredAppInfos.count ? [_filteredAppInfos.allValues[ 0 ] copy] : [_appInfos copy];
+    
+    NSPredicate* predicate = [NSPredicate predicateWithFormat:@"ANY tags CONTAINS[c] %@", tag];
+    
+    NSArray* filteredAppInfos = [appInfosToFilter filteredArrayUsingPredicate:predicate];
+    
+    [_filteredAppInfos setObject:filteredAppInfos forKey:tag];
+    
+    completion();
+}
+
 - ( void )cell:( UITableViewCell* )cell onTableView:( UITableView* )tableView didScrollOnView:( UIView* )view
 {
     __weak UIImageView* weakParallaxImageView = ( UIImageView* )[cell viewWithTag:2];
@@ -213,8 +266,10 @@
     float move = (distanceFromCenter / CGRectGetHeight(view.frame)) * difference;
     
     CGRect imageRect = weakParallaxImageView.frame;
+    
     imageRect.origin.x = -96;
     imageRect.origin.y = -(difference/2)+move;
+    
     weakParallaxImageView.frame = imageRect;
 }
 
@@ -228,6 +283,9 @@
 
 - ( NSInteger )tableView:( UITableView* )tableView numberOfRowsInSection:( NSInteger )section
 {
+    if ( _tag )
+        return [_filteredAppInfos[ _tag ] count];
+    
     return _appInfos.count;
 }
 
@@ -235,7 +293,7 @@
 {
     static NSString* CellIdentifier = @"merell";
     
-    __weak NSDictionary* weakAppInfo = _appInfos[ indexPath.row ];
+    __weak NSDictionary* weakAppInfo = _tag ? _filteredAppInfos[ _tag ][ indexPath.row ] : _appInfos[ indexPath.row ];
     
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     

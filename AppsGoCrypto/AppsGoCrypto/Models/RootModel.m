@@ -73,7 +73,7 @@
 {
     if (_displayedChildren && _displayedChildren.count > 0 && index >=0 && index < _displayedChildren.count)
     {
-        return [((NSString *)[_displayedChildren objectAtIndex:index]) integerValue];
+        return [_displayedChildren[index] integerValue];
     }
     return 0;
 }

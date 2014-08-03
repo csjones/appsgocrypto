@@ -49,6 +49,13 @@
 - ( void )tableView:( UITableView* )tableView didSelectRowAtIndexPath:( NSIndexPath* )indexPath
 {
     [self setArraysWithSelected:indexPath.row];
+    
+    if ( [self.stackController.topViewController isKindOfClass:[ListVC class]] )
+    {
+        __weak ListVC* listVC = ( ListVC* )self.stackController.topViewController;
+        
+        [listVC updateListWithTag:((STCategory *)_tableModel.categories[ [_tableModel getCategoryIndexFrom:_tableModel.selectedCategorySection] ]).name];
+    }
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////

@@ -9,11 +9,17 @@
 #import "ListVC.h"
 #import "UIViewController+PSStackedView.h"
 
+///////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark    -   ListVC Category Interface
+
 @interface ListVC ( )
 
 - ( void )updateVisibleCells;
 
 @end
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark    -   ListVC Class Implementation
 
 @implementation ListVC
 
@@ -44,13 +50,24 @@
     self.tableView.dataSource = self.tableModel;
     
     // Do any additional setup after loading the view.
-//    [self.tableModel getAppInfoWithCompletion:^{
-//        [_weakSelf.tableView reloadData];
-//    }];
+    [self.tableModel getAppInfoWithCompletion:^{
+        [_weakSelf.tableView reloadData];
+    }];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-#pragma mark    -   Private
+#pragma mark    -   Instance Methods
+
+- ( void )updateListWithTag:( NSString* )tag
+{
+    [_tableModel appInfosWithTag:tag
+                      completion:^{
+                          [_weakSelf.tableView reloadData];
+                      }];
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark    -   Category Methods
 
 - ( void )updateVisibleCells
 {
@@ -81,7 +98,9 @@
     
     vc.delegate = self;
     
-    NSDictionary* dict = [[NSDictionary alloc] initWithObjectsAndKeys:_tableModel.appInfos[ indexPath.row ][ @"appId" ],SKStoreProductParameterITunesItemIdentifier,nil];
+    __weak NSDictionary* weakAppInfo = _tableModel.tag ? _tableModel.filteredAppInfos[ _tableModel.tag ][ indexPath.row ] : _tableModel.appInfos[ indexPath.row ];
+    
+    NSDictionary* dict = [[NSDictionary alloc] initWithObjectsAndKeys:weakAppInfo[ @"appId" ],SKStoreProductParameterITunesItemIdentifier,nil];
     
     [vc loadProductWithParameters:dict completionBlock:^(BOOL result, NSError *error) { }];
     

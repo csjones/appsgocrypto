@@ -11,11 +11,22 @@
 
 #import <Storekit/StoreKit.h>
 
+///////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark    -   ListVC Class Interface
+
 @interface ListVC : UITableViewController < UIScrollViewDelegate, UITableViewDelegate, SKStoreProductViewControllerDelegate >
 {
     __weak ListVC*  _weakSelf;
 }
 
+///////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark    -   Properties
+
 @property ( strong, nonatomic )         ListModel*      tableModel;
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark    -   Instance Methods
+
+- ( void )updateListWithTag:( NSString* )tag;
 
 @end
