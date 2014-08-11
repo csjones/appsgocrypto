@@ -6,3 +6,7 @@
 	path = _vendors/AFNetworking
 	url = https://github.com/AFNetworking/AFNetworking
 	ignore = dirty
+[submodule "_vendors/HFStretchableTableHeaderView"]
+	path = _vendors/HFStretchableTableHeaderView
+	url = https://github.com/hfrahmann/HFStretchableTableHeaderView
+	ignore = dirty
