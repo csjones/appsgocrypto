@@ -10,31 +10,67 @@
 	<string>AppsGoCrypto</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>34DCF90D-1837-4B23-9979-A570C37BF797</key>
+		<key>37193F8A12895350C4D02D3A49CF9846B72C9F6A</key>
+		<string>https://github.com/steipete/PSStackedView</string>
+		<key>B3E8E38153EDFF873154EC0021A433E153B0129C</key>
 		<string>https://github.com/csjones/appsgocrypto.git</string>
+		<key>DD20A1A48C66B5213E0FEBB87A95EF51D6C6F3E8</key>
+		<string>https://github.com/AFNetworking/AFNetworking</string>
+		<key>E7ABD05A357A451DACA077619D5D30D074E8CE96</key>
+		<string>https://github.com/hfrahmann/HFStretchableTableHeaderView</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>AppsGoCrypto/AppsGoCrypto.xcodeproj/project.xcworkspace</string>
+	<string>AppsGoCrypto/AppsGoCrypto.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>34DCF90D-1837-4B23-9979-A570C37BF797</key>
+		<key>37193F8A12895350C4D02D3A49CF9846B72C9F6A</key>
+		<string>../../.._vendors/PSStackedView</string>
+		<key>B3E8E38153EDFF873154EC0021A433E153B0129C</key>
 		<string>../../..</string>
+		<key>DD20A1A48C66B5213E0FEBB87A95EF51D6C6F3E8</key>
+		<string>../../.._vendors/AFNetworking</string>
+		<key>E7ABD05A357A451DACA077619D5D30D074E8CE96</key>
+		<string>../../.._vendors/HFStretchableTableHeaderView</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/csjones/appsgocrypto.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>34DCF90D-1837-4B23-9979-A570C37BF797</string>
+	<string>B3E8E38153EDFF873154EC0021A433E153B0129C</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>34DCF90D-1837-4B23-9979-A570C37BF797</string>
+			<string>DD20A1A48C66B5213E0FEBB87A95EF51D6C6F3E8</string>
+			<key>IDESourceControlWCCName</key>
+			<string>AFNetworking</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>B3E8E38153EDFF873154EC0021A433E153B0129C</string>
 			<key>IDESourceControlWCCName</key>
 			<string>appsgocrypto</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E7ABD05A357A451DACA077619D5D30D074E8CE96</string>
+			<key>IDESourceControlWCCName</key>
+			<string>HFStretchableTableHeaderView</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>37193F8A12895350C4D02D3A49CF9846B72C9F6A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>PSStackedView</string>
 		</dict>
 	</array>
 </dict>

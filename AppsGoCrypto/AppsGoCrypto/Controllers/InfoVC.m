@@ -8,42 +8,41 @@
 
 #import "InfoVC.h"
 
-@interface InfoVC ()
-
-@end
+///////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark    -   InfoVC Class Implementation
 
 @implementation InfoVC
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+///////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark    -   UIViewController Methods
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    _stretchableTableHeaderView = [HFStretchableTableHeaderView new];
+    [_stretchableTableHeaderView stretchHeaderForTableView:self.tableView withView:_stretchView];
 }
 
-- (void)didReceiveMemoryWarning
+- (void)viewDidLayoutSubviews
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [_stretchableTableHeaderView resizeView];
 }
 
-/*
-#pragma mark - Navigation
+///////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark    -   UIScrollViewDelegate Methods
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    [_stretchableTableHeaderView scrollViewDidScroll:scrollView];
 }
-*/
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark    -   Instance Methods
+
+- ( void )updateViewWithAppInfo:( NSDictionary* )dictionary
+{
+    _appInfo = dictionary;
+}
 
 @end

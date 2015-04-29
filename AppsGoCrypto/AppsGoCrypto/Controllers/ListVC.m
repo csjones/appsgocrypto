@@ -6,7 +6,9 @@
 //  Copyright (c) 2014 GigaBitcoin, LLC. All rights reserved.
 //
 
+#import "InfoVC.h"
 #import "ListVC.h"
+#import "PSStackedViewController.h"
 #import "UIViewController+PSStackedView.h"
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -94,17 +96,25 @@
 
 - ( void )tableView:( UITableView* )tableView didSelectRowAtIndexPath:( NSIndexPath* )indexPath
 {
-    SKStoreProductViewController* vc = [[SKStoreProductViewController alloc] init];
-    
-    vc.delegate = self;
+//    SKStoreProductViewController* vc = [[SKStoreProductViewController alloc] init];
+//    
+//    vc.delegate = self;
+//    
+//    __weak NSDictionary* weakAppInfo = _tableModel.tag ? _tableModel.filteredAppInfos[ _tableModel.tag ][ indexPath.row ] : _tableModel.appInfos[ indexPath.row ];
+//    
+//    NSDictionary* dict = [[NSDictionary alloc] initWithObjectsAndKeys:weakAppInfo[ @"appId" ],SKStoreProductParameterITunesItemIdentifier,nil];
+//    
+//    [vc loadProductWithParameters:dict completionBlock:^(BOOL result, NSError *error) { }];
+//    
+//    [self presentViewController:vc animated:YES completion:^{ }];
     
     __weak NSDictionary* weakAppInfo = _tableModel.tag ? _tableModel.filteredAppInfos[ _tableModel.tag ][ indexPath.row ] : _tableModel.appInfos[ indexPath.row ];
+
+    InfoVC* infoVC = [self.storyboard instantiateViewControllerWithIdentifier:@"Info"];
     
-    NSDictionary* dict = [[NSDictionary alloc] initWithObjectsAndKeys:weakAppInfo[ @"appId" ],SKStoreProductParameterITunesItemIdentifier,nil];
+    [infoVC updateViewWithAppInfo:weakAppInfo];
     
-    [vc loadProductWithParameters:dict completionBlock:^(BOOL result, NSError *error) { }];
-    
-    [self presentViewController:vc animated:YES completion:^{ }];
+    [self.stackController pushViewController:infoVC animated:YES];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////

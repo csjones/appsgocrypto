@@ -37,7 +37,7 @@
 		3FBD26A91957BC0E006BD8BE /* RootModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FBD26A81957BC0E006BD8BE /* RootModel.m */; };
 		3FBD26AD1957D432006BD8BE /* NSArray+RootModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FBD26AC1957D432006BD8BE /* NSArray+RootModel.m */; };
 		3FD2A07319996AE000B80BA6 /* InfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD2A07219996AE000B80BA6 /* InfoVC.m */; };
-		3FD2A07619996B8600B80BA6 /* InfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD2A07519996B8600B80BA6 /* InfoModel.m */; };
+		3FD2A07A19997C7A00B80BA6 /* HFStretchableTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD2A07919997C7A00B80BA6 /* HFStretchableTableHeaderView.m */; };
 		3FD3051C195A77BB005366CF /* AppCategories.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3FD3051B195A77BB005366CF /* AppCategories.plist */; };
 		3FD30524195A7C4D005366CF /* STCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD3051F195A7C4D005366CF /* STCategory.m */; };
 		3FD30525195A7C4D005366CF /* STTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD30521195A7C4D005366CF /* STTableViewCell.m */; };
@@ -123,8 +123,8 @@
 		3FBD26AC1957D432006BD8BE /* NSArray+RootModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+RootModel.m"; path = "Categories/NSArray+RootModel.m"; sourceTree = "<group>"; };
 		3FD2A07119996AE000B80BA6 /* InfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InfoVC.h; path = Controllers/InfoVC.h; sourceTree = "<group>"; };
 		3FD2A07219996AE000B80BA6 /* InfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InfoVC.m; path = Controllers/InfoVC.m; sourceTree = "<group>"; };
-		3FD2A07419996B8600B80BA6 /* InfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InfoModel.h; path = Models/InfoModel.h; sourceTree = "<group>"; };
-		3FD2A07519996B8600B80BA6 /* InfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InfoModel.m; path = Models/InfoModel.m; sourceTree = "<group>"; };
+		3FD2A07819997C7A00B80BA6 /* HFStretchableTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFStretchableTableHeaderView.h; sourceTree = "<group>"; };
+		3FD2A07919997C7A00B80BA6 /* HFStretchableTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFStretchableTableHeaderView.m; sourceTree = "<group>"; };
 		3FD3051B195A77BB005366CF /* AppCategories.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AppCategories.plist; path = Plists/AppCategories.plist; sourceTree = "<group>"; };
 		3FD3051E195A7C4D005366CF /* STCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STCategory.h; sourceTree = "<group>"; };
 		3FD3051F195A7C4D005366CF /* STCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STCategory.m; sourceTree = "<group>"; };
@@ -334,6 +334,7 @@
 			isa = PBXGroup;
 			children = (
 				3FD30527195D1A2B005366CF /* AFNetworking */,
+				3FD2A07719997C7A00B80BA6 /* HFStretchableTableHeaderView */,
 				3F4F51811957A8AD007EB2BD /* PSStackedView */,
 				3FD3051D195A7C4D005366CF /* SvppyTable */,
 				3FD30544195D1A3E005366CF /* UIKit+AFNetworking */,
@@ -364,8 +365,6 @@
 			children = (
 				3FD3056919609530005366CF /* ListModel.h */,
 				3FD3056A19609530005366CF /* ListModel.m */,
-				3FD2A07419996B8600B80BA6 /* InfoModel.h */,
-				3FD2A07519996B8600B80BA6 /* InfoModel.m */,
 				3FBD26A71957BC0E006BD8BE /* RootModel.h */,
 				3FBD26A81957BC0E006BD8BE /* RootModel.m */,
 			);
@@ -379,6 +378,16 @@
 				3FBD26AC1957D432006BD8BE /* NSArray+RootModel.m */,
 			);
 			name = Categories;
+			sourceTree = "<group>";
+		};
+		3FD2A07719997C7A00B80BA6 /* HFStretchableTableHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				3FD2A07819997C7A00B80BA6 /* HFStretchableTableHeaderView.h */,
+				3FD2A07919997C7A00B80BA6 /* HFStretchableTableHeaderView.m */,
+			);
+			name = HFStretchableTableHeaderView;
+			path = ../_vendors/HFStretchableTableHeaderView/HFStretchableTableHeaderView;
 			sourceTree = "<group>";
 		};
 		3FD3051D195A7C4D005366CF /* SvppyTable */ = {
@@ -563,7 +572,6 @@
 				3FD30526195A7C4D005366CF /* UIColor+HexString.m in Sources */,
 				3FD30524195A7C4D005366CF /* STCategory.m in Sources */,
 				3FD30561195D1C0C005366CF /* AppsGoCryptoManager.m in Sources */,
-				3FD2A07619996B8600B80BA6 /* InfoModel.m in Sources */,
 				3FD30559195D1A3E005366CF /* UIButton+AFNetworking.m in Sources */,
 				3F4F51951957A8AD007EB2BD /* UIViewController+PSStackedView.m in Sources */,
 				3FD3056B19609530005366CF /* ListModel.m in Sources */,
@@ -582,6 +590,7 @@
 				3F4F51901957A8AD007EB2BD /* PSStackedViewController.m in Sources */,
 				3FD30557195D1A3E005366CF /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				3F4F519C1957A936007EB2BD /* RootVC.m in Sources */,
+				3FD2A07A19997C7A00B80BA6 /* HFStretchableTableHeaderView.m in Sources */,
 				3FD3056819607E56005366CF /* iTunesSearchManager.m in Sources */,
 				3FD30525195A7C4D005366CF /* STTableViewCell.m in Sources */,
 				3F4F51991957A90A007EB2BD /* StackedContainer.m in Sources */,
